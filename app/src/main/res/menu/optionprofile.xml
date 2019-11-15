@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- always: 항상 보이게 ,never:항상 overflow에 표시
+         ifRoom: 액션바에 공간이 있을경우 표시
+         withText : 액션바에 아이콘과 텍스트 함께 표시 -->
+
+    <item
+        android:id="@+id/menu_a"
+        android:title="camera"
+        android:icon="@drawable/ic_move_to_inbox_black_24dp"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/menu_b"
+        android:title="call"
+        android:icon="@drawable/ic_keyboard_arrow_down"
+        app:showAsAction="ifRoom"/>
+
+
+
+</menu>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/bnv_aa"
+        app:showAsAction="ifRoom"
+        android:enabled="true"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="홈"/>
+
+    <item android:id="@+id/bnv_bb"
+        app:showAsAction="ifRoom"
+        android:enabled="true"
+        android:icon="@drawable/ic_kategori_black_24dp"
+        android:title="카테고리"/>
+
+    <item android:id="@+id/bnv_cc"
+        app:showAsAction="ifRoom"
+        android:enabled="true"
+        android:icon="@drawable/ic_chat_black_24dp"
+        android:title="채팅"/>
+
+    <item android:id="@+id/bnv_dd"
+        app:showAsAction="ifRoom"
+        android:enabled="true"
+        android:icon="@drawable/ic_person_black_24dp"
+        android:title="나의 당근"/>
+
+    <item android:id="@+id/bnv_ee"
+        app:showAsAction="ifRoom"
+        android:enabled="true"
+        android:icon="@drawable/ic_main_bottom_a"
+        android:title="글쓰기"/>
+
+</menu>

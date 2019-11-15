@@ -1,0 +1,788 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="@color/white">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="카테고리"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="#222222"
+                    android:layout_marginLeft="20dp"
+                    android:background="@color/white"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_favorite_border_black_24dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="280dp"/>
+            </LinearLayout>
+
+
+            <View style="@style/Divider"
+                android:layout_marginTop="16dp"/>
+
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="16dp"
+                android:text="우리동네 서비스"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#222222"
+                android:layout_marginTop="4dp"
+                android:layout_marginLeft="16dp"
+                android:background="@color/white"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:layout_width="60dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:text="클래스"
+                    android:background="@drawable/radius"/>
+
+                <Button
+                    android:layout_width="60dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginLeft="8dp"
+                    android:text="속눈썹"
+                    android:background="@drawable/radius"/>
+
+                <Button
+                    android:layout_width="55dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginLeft="8dp"
+                    android:text="용달"
+                    android:background="@drawable/radius"/>
+
+                <Button
+                    android:layout_width="55dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginLeft="8dp"
+                    android:text="이사"
+                    android:background="@drawable/radius"/>
+
+                <Button
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginLeft="8dp"
+                    android:text="인테리어"
+                    android:background="@drawable/radius"/>
+
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@color/white">
+
+                <Button
+                    android:layout_width="60dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:text="에어컨"
+                    android:background="@drawable/radius"/>
+
+                <Button
+                    android:layout_width="60dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginLeft="8dp"
+                    android:text="방충망"
+                    android:background="@drawable/radius"/>
+
+                <Button
+                    android:layout_width="55dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginLeft="8dp"
+                    android:text="용달"
+                    android:background="@drawable/radius"/>
+
+                <Button
+                    android:layout_width="45dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginLeft="8dp"
+                    android:text="퀵"
+                    android:background="@drawable/radius"/>
+
+
+            </LinearLayout>
+
+            <View style="@style/Divider"
+                android:layout_marginTop="16dp"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="우리동네 서비스 더 찾아보기"
+                android:background="@drawable/bg_botton"
+                android:textColor="#008b8b"
+                android:textStyle="bold"/>
+
+
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:background="#fffffd"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="중고거래"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:layout_marginTop="16dp"
+                android:layout_marginLeft="18dp"
+                android:background="@color/white"/>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="26dp"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:src="@drawable/ic_favorite_border_black_24dp"
+                    android:layout_gravity="center_vertical"/>
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:text="인기매물"
+                    android:textColor="#333333"
+                    android:textSize="16sp"
+                    android:background="@drawable/bg_botton"
+                    android:paddingRight="8dp"
+                    style="@style/Widget.AppCompat.Button.Borderless" />
+            </LinearLayout>
+
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:paddingTop="14dp"
+                android:orientation="horizontal"
+                android:layout_marginBottom="4dp">
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:src="@drawable/computer"
+                    android:layout_gravity="center_vertical"/>
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="16dp"
+                    android:layout_marginBottom="4dp"
+                    android:text="디지털/가전"
+                    android:textColor="#333333"
+                    android:textSize="16sp"
+                    android:background="@drawable/bg_botton"
+                    android:paddingRight="8dp"
+                    style="@style/Widget.AppCompat.Button.Borderless" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:paddingTop="18dp"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:src="@drawable/ic_favorite_border_black_24dp"
+                    android:layout_gravity="center_vertical"/>
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:paddingLeft="16dp"
+                    android:text="가구/인테리어"
+                    android:textColor="#333333"
+                    android:textSize="16sp"
+                    android:background="@drawable/bg_botton"
+                    android:paddingRight="8dp"
+                    style="@style/Widget.AppCompat.Button.Borderless" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:paddingTop="18dp"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:src="@drawable/ic_favorite_border_black_24dp"
+                    android:layout_gravity="center_vertical"/>
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:paddingLeft="16dp"
+                    android:text="유아동/유아도서"
+                    android:textColor="#333333"
+                    android:textSize="16sp"
+                    android:background="@drawable/bg_botton"
+                    android:paddingRight="8dp"
+                    style="@style/Widget.AppCompat.Button.Borderless" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:paddingTop="18dp"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:src="@drawable/dolly"
+                    android:layout_gravity="center_vertical"/>
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:paddingLeft="16dp"
+                    android:text="생활/가공식품"
+                    android:textColor="#333333"
+                    android:textSize="16sp"
+                    android:background="@drawable/bg_botton"
+                    android:paddingRight="8dp"
+                    style="@style/Widget.AppCompat.Button.Borderless" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:paddingTop="18dp"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:src="@drawable/fashion"
+                    android:layout_gravity="center_vertical"/>
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:text="여성의류"
+                    android:textColor="#333333"
+                    android:textSize="16sp"
+                    android:background="@drawable/bg_botton"
+                    android:paddingRight="8dp"
+                    style="@style/Widget.AppCompat.Button.Borderless" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:paddingTop="18dp"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:src="@drawable/locked"
+                    android:layout_gravity="center_vertical"/>
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:text="여성잡화"
+                    android:textColor="#333333"
+                    android:textSize="16sp"
+                    android:background="@drawable/bg_botton"
+                    android:paddingRight="8dp"
+                    style="@style/Widget.AppCompat.Button.Borderless" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:paddingTop="18dp"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:src="@drawable/ic_favorite_border_black_24dp"
+                    android:layout_gravity="center_vertical"/>
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:text="뷰티미용"
+                    android:textColor="#333333"
+                    android:textSize="16sp"
+                    android:background="@drawable/bg_botton"
+                    android:paddingRight="8dp"
+                    style="@style/Widget.AppCompat.Button.Borderless" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:paddingTop="18dp"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:src="@drawable/ic_favorite_border_black_24dp"
+                    android:layout_gravity="center_vertical"/>
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:paddingLeft="16dp"
+                    android:text="남성패션/잡화"
+                    android:textColor="#333333"
+                    android:textSize="16sp"
+                    android:background="@drawable/bg_botton"
+                    android:paddingRight="8dp"
+                    style="@style/Widget.AppCompat.Button.Borderless" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:paddingTop="18dp"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:src="@drawable/bike"
+                    android:layout_gravity="center_vertical"/>
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:paddingLeft="16dp"
+                    android:text="스포츠/레저"
+                    android:textColor="#333333"
+                    android:textSize="16sp"
+                    android:background="@drawable/bg_botton"
+                    android:paddingRight="8dp"
+                    style="@style/Widget.AppCompat.Button.Borderless" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:paddingTop="18dp"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:src="@drawable/gamecontroller"
+                    android:layout_gravity="center_vertical"/>
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:paddingLeft="4dp"
+                    android:text="게임/취미"
+                    android:textColor="#333333"
+                    android:textSize="16sp"
+                    android:background="@drawable/bg_botton"
+                    android:paddingRight="8dp"
+                    style="@style/Widget.AppCompat.Button.Borderless" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:paddingTop="18dp"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:src="@drawable/ic_favorite_border_black_24dp"
+                    android:layout_gravity="center_vertical"/>
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:paddingLeft="16dp"
+                    android:text="도서/티켓/음반"
+                    android:textColor="#333333"
+                    android:textSize="16sp"
+                    android:background="@drawable/bg_botton"
+                    android:paddingRight="8dp"
+                    style="@style/Widget.AppCompat.Button.Borderless" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:paddingTop="18dp"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:src="@drawable/ic_favorite_border_black_24dp"
+                    android:layout_gravity="center_vertical"/>
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:paddingLeft="16dp"
+                    android:text="반려동물용품"
+                    android:textColor="#333333"
+                    android:textSize="16sp"
+                    android:background="@drawable/bg_botton"
+                    android:paddingRight="8dp"
+                    style="@style/Widget.AppCompat.Button.Borderless" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:paddingTop="18dp"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:src="@drawable/ic_favorite_border_black_24dp"
+                    android:layout_gravity="center_vertical"/>
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:paddingLeft="16dp"
+                    android:text="기타 중고물품"
+                    android:textColor="#333333"
+                    android:textSize="16sp"
+                    android:background="@drawable/bg_botton"
+                    android:paddingRight="8dp"
+                    style="@style/Widget.AppCompat.Button.Borderless" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:paddingTop="18dp"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:src="@drawable/ic_favorite_border_black_24dp"
+                    android:layout_gravity="center_vertical"/>
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:text="삽니다!!!"
+                    android:textColor="#333333"
+                    android:textSize="16sp"
+                    android:background="@drawable/bg_botton"
+                    android:paddingRight="8dp"
+                    style="@style/Widget.AppCompat.Button.Borderless" />
+            </LinearLayout>
+
+
+            <View style="@style/Divider"
+                android:layout_marginTop="16dp"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="동네홍보"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:layout_marginTop="16dp"
+                android:layout_marginLeft="18dp"
+                android:background="@color/white"/>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:paddingTop="18dp"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:src="@drawable/ic_favorite_border_black_24dp"
+                    android:layout_gravity="center_vertical"/>
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:paddingLeft="16dp"
+                    android:text="중고차/오토바이"
+                    android:textColor="#333333"
+                    android:textSize="16sp"
+                    android:background="@drawable/bg_botton"
+                    android:paddingRight="8dp"
+                    style="@style/Widget.AppCompat.Button.Borderless" />
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:paddingTop="18dp"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:src="@drawable/ic_favorite_border_black_24dp"
+                    android:layout_gravity="center_vertical"/>
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:paddingLeft="16dp"
+                    android:text="동네 구인구직"
+                    android:textColor="#333333"
+                    android:textSize="16sp"
+                    android:background="@drawable/bg_botton"
+                    android:paddingRight="8dp"
+                    style="@style/Widget.AppCompat.Button.Borderless" />
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:paddingTop="18dp"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:src="@drawable/ic_favorite_border_black_24dp"
+                    android:layout_gravity="center_vertical"/>
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:text="부동산"
+                    android:textColor="#333333"
+                    android:textSize="16sp"
+                    android:background="@drawable/bg_botton"
+                    android:paddingRight="8dp"
+                    style="@style/Widget.AppCompat.Button.Borderless" />
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:paddingTop="18dp"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:src="@drawable/ic_favorite_border_black_24dp"
+                    android:layout_gravity="center_vertical"/>
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:text="농수산물"
+                    android:textColor="#333333"
+                    android:textSize="16sp"
+                    android:background="@drawable/bg_botton"
+                    android:paddingRight="8dp"
+                    style="@style/Widget.AppCompat.Button.Borderless" />
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:paddingTop="18dp"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:src="@drawable/ic_favorite_border_black_24dp"
+                    android:layout_gravity="center_vertical"/>
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:paddingLeft="16dp"
+                    android:text="지역업체 소개"
+                    android:textColor="#333333"
+                    android:textSize="16sp"
+                    android:background="@drawable/bg_botton"
+                    android:paddingRight="8dp"
+                    style="@style/Widget.AppCompat.Button.Borderless" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:paddingTop="18dp"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:src="@drawable/ic_favorite_border_black_24dp"
+                    android:layout_gravity="center_vertical"/>
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:paddingLeft="16dp"
+                    android:text="과외/클래스 모집"
+                    android:textColor="#333333"
+                    android:textSize="16sp"
+                    android:background="@drawable/bg_botton"
+                    android:paddingRight="8dp"
+                    style="@style/Widget.AppCompat.Button.Borderless" />
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:paddingTop="18dp"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:src="@drawable/ic_favorite_border_black_24dp"
+                    android:layout_gravity="center_vertical"/>
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:paddingLeft="16dp"
+                    android:text="전시/공연/행사"
+                    android:textColor="#333333"
+                    android:textSize="16sp"
+                    android:background="@drawable/bg_botton"
+                    android:paddingRight="8dp"
+                    style="@style/Widget.AppCompat.Button.Borderless" />
+            </LinearLayout>
+
+
+
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp">
+            </LinearLayout>
+
+
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
+
+
+</androidx.drawerlayout.widget.DrawerLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

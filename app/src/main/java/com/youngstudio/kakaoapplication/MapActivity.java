@@ -79,7 +79,8 @@ public class MapActivity extends AppCompatActivity{
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent();
-                intent.putExtra("array",array[2]);
+                intent.putExtra("array1",array[1]);
+                intent.putExtra("array2",array[2]);
                 setResult(RESULT_OK, intent);
                 finish();
             }
@@ -89,7 +90,8 @@ public class MapActivity extends AppCompatActivity{
     @Override
     public void onBackPressed() {//뒤로가기버튼
         Intent intent = new Intent();
-        intent.putExtra("array",array[2]);
+        intent.putExtra("array1",array[1]);
+        intent.putExtra("array2",array[2]);
         setResult(RESULT_OK, intent);
         super.onBackPressed();
     }

@@ -34,6 +34,8 @@ public class WritingActivity extends AppCompatActivity {
     ImageView iv_Kategorie,iv_map;
     TextView tv_Kategotie,tv_map;
 
+    String nickName , email;
+
 
     String[] items= new String[]{"디지털/가전", "가구/인테리어", "유아/유아도서","생활/가공식품","여성의류/잡화","남성패션/잡화",
             "뷰티미용","스포츠/레저","게임/취미","도서/티켓/음반","반려동물용품","기타 중고물품","삽니다!!"};
@@ -47,6 +49,9 @@ public class WritingActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_writing);
+
+        nickName= getIntent().getStringExtra("nickname");
+        email= getIntent().getStringExtra("email");
 
         etName= findViewById(R.id.name);
         etMsg= findViewById(R.id.msg);
@@ -221,6 +226,9 @@ public class WritingActivity extends AppCompatActivity {
         });
 
         //요청객체에 보낼 데이터를 추가
+        smpr.addStringParam("nickname",nickName);
+        smpr.addStringParam("email", email);
+
         smpr.addStringParam("name", name);
         smpr.addStringParam("msg", msg);
         smpr.addStringParam("price", price+"");

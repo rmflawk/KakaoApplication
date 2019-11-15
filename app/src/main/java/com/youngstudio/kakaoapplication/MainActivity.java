@@ -28,6 +28,10 @@ public class MainActivity extends AppCompatActivity {
     public static ImageView main_iv;
     public static AppBarLayout appBarLayout;
     public static Toolbar toolbar;
+    public static String getName;
+    public static String getEmail;
+
+
 
 
     @Override
@@ -35,6 +39,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        getName= getIntent().getStringExtra("name");
+        getEmail= getIntent().getStringExtra("email");
+        //String getProfile= getIntent().getStringExtra("profile");
+
+        Toast.makeText(this, getName + getEmail , Toast.LENGTH_SHORT).show();
         // 0K2ry0VYmL92cMZbtCuHA1t99ls=
 //        try {
 //            PackageInfo info = getPackageManager().getPackageInfo(getPackageName(), PackageManager.GET_SIGNATURES);
@@ -140,10 +149,11 @@ public class MainActivity extends AppCompatActivity {
 
         if(requestCode == 10){
             if(resultCode == RESULT_OK){
-                main_tv.setText(data.getStringExtra("array"));
+                main_tv.setText(data.getStringExtra("array1") + " "+ data.getStringExtra("array2")); // 현재위치 구 와 동까지 나옴
+
             }else{
                 Toast.makeText(this, "결과값이 없습니다.", Toast.LENGTH_SHORT).show();
-                MapActivity m= new MapActivity();
+                //MapActivity m= new MapActivity();
 
             }
         }
@@ -186,6 +196,8 @@ public class MainActivity extends AppCompatActivity {
                     MainActivity.main_iv.setVisibility(View.GONE);
                     MainActivity.appBarLayout.setVisibility(View.GONE);
                     Intent intent= new Intent(MainActivity.this, WritingActivity.class);
+                    intent.putExtra("nickname",getName);
+                    intent.putExtra("email",getEmail);
                     startActivity(intent);
                     break;
             }

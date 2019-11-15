@@ -3,7 +3,12 @@ package com.youngstudio.kakaoapplication;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.Signature;
 import android.os.Bundle;
+import android.util.Base64;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -20,6 +25,9 @@ import com.kakao.usermgmt.response.MeV2Response;
 import com.kakao.util.OptionalBoolean;
 import com.kakao.util.exception.KakaoException;
 
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+
 public class LoginActivity extends AppCompatActivity {
 
     //카카오 로그인 콜백 선언
@@ -29,6 +37,18 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        try {
+            PackageInfo info = getPackageManager().getPackageInfo(getPackageName(), PackageManager.GET_SIGNATURES);
+            for (Signature signature : info.signatures) {
+                MessageDigest md = MessageDigest.getInstance("SHA");
+                md.update(signature.toByteArray());
+                Log.d("KeyHash:", Base64.encodeToString(md.digest(), Base64.DEFAULT));
+            }
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
 
         //카카오 로그인 콜백 초기화
         sessionCallback = new SessionCallback();
@@ -138,7 +158,7 @@ public class LoginActivity extends AppCompatActivity {
                         });
                     } else { //모든 정보를 가져오도록 허락받았다면
                         //MainActivity로 넘어가면서 유저 정보를 같이 넘겨줌
-                        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                        Intent intent = new Intent(getApplicationContext(), LoginMainActivity.class);
                         intent.putExtra("name", result.getNickname()); //유저 이름(String)
                         intent.putExtra("profile", result.getProfileImagePath()); //유저 프로필 사진 주소(String)
 

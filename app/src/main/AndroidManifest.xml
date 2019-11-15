@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
+        <activity android:name=".ClickActivity"></activity>
+        <activity android:name=".MainActivity" />
+
         <meta-data
             android:name="com.kakao.sdk.AppKey"
             android:value="@string/kakao_app_key" />
@@ -20,18 +23,25 @@
         <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.kakao.auth.authorization.authcode.KakaoWebViewActivity"
+            android:launchMode="singleTop"
+            android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-        <activity android:name=".MainActivity">
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
         </activity>
+        <activity android:name=".LoginMainActivity" />
 
         <uses-library
             android:name="org.apache.http.legacy"
             android:required="false" />
-
-
     </application>
 
 </manifest>

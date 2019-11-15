@@ -88,6 +88,8 @@ public class MainFragmentAdapter extends RecyclerView.Adapter {
                     //상세화면(DetailActivity)에 넘겨줄 데이터들
 
                     String name= datas.get(position).name;
+                    String nickname= datas.get(position).nickname;
+                    String email= datas.get(position).email;
                     String date= datas.get(position).date;
                     String mainMsg= datas.get(position).mainMsg;
                     String price= datas.get(position).price;
@@ -100,6 +102,8 @@ public class MainFragmentAdapter extends RecyclerView.Adapter {
                     //아이템의 상세 화면(DetailActivity)로 전환
                     Intent intent= new Intent(context, ClickActivity.class);
                     intent.putExtra("name", name);
+                    intent.putExtra("nickname", nickname);
+                    intent.putExtra("email", email);
                     intent.putExtra("date", date);
                     intent.putExtra("mainMsg", mainMsg);
                     intent.putExtra("price", price);

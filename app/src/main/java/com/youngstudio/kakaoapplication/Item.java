@@ -3,6 +3,8 @@ package com.youngstudio.kakaoapplication;
 public class Item {
 
     int no;
+    String nickname;
+    String email;
     String name;
     String date;
     String price;
@@ -12,8 +14,10 @@ public class Item {
     String subName;
     int img;
 
-    public Item(int no, String name, String price, String kt, String date, String mainMsg, String imgPath) {
+    public Item(int no,String nickname, String email, String name, String price, String kt, String date, String mainMsg, String imgPath) {
         this.no = no;
+        this.nickname = nickname;
+        this.email = email;
         this.name = name;
         this.date = date;
         this.kt = kt;

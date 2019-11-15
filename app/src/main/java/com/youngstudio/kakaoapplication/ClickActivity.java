@@ -16,7 +16,7 @@ import com.bumptech.glide.Glide;
 public class ClickActivity extends AppCompatActivity {
 
     ImageView iv;
-    TextView name,date,price,kt;
+    TextView name,date,price,kt,nickname;
     EditText mainMsg;
 
     @Override
@@ -25,6 +25,7 @@ public class ClickActivity extends AppCompatActivity {
         setContentView(R.layout.activity_click);
 
         name= findViewById(R.id.click_tv_name);
+        nickname= findViewById(R.id.click_tv_nikname);
         date= findViewById(R.id.click_tv_date);
         price= findViewById(R.id.click_tv_price);
         mainMsg= findViewById(R.id.click_et_mainmsg);
@@ -39,6 +40,10 @@ public class ClickActivity extends AppCompatActivity {
 
         Intent intent= getIntent();
         name.setText(intent.getStringExtra("name"));
+
+        nickname.setText(intent.getStringExtra("nickname"));
+        //name.setText(intent.getStringExtra("name"));
+
         date.setText(intent.getStringExtra("date"));
         mainMsg.setText(intent.getStringExtra("mainMsg"));
         price.setText(intent.getStringExtra("price"));

@@ -103,6 +103,10 @@ public class MainFragment extends Fragment {//implements View.OnClickListener {
                                 JSONObject jsonObject= response.getJSONObject(i);
 
                                 int no= Integer.parseInt( jsonObject.getString("no") );
+
+                                String nickname= jsonObject.getString("nickname");
+                                String email= jsonObject.getString("email");
+
                                 String name= jsonObject.getString("name");
                                 String msg= jsonObject.getString("message");
                                 String price= jsonObject.getString("price");
@@ -114,7 +118,7 @@ public class MainFragment extends Fragment {//implements View.OnClickListener {
                                 //이미지 경로의 경우 서버IP가 제외된 주소이므로(uploads/xxxxx.jpg) 바로 사용 불가.
                                 imgPath = "http://rmflawkdk.dothome.co.kr/Android/"+imgPath;
 
-                                datas.add( 0 , new Item(no, name, price, kt, date, msg, imgPath) );
+                                datas.add( 0 , new Item(no, nickname, email, name, price, kt, date, msg, imgPath) );
                                 adapter.notifyItemInserted(0);
                             }
 

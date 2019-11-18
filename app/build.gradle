@@ -42,4 +42,15 @@ dependencies {
     api group: 'com.kakao.sdk', name: 'usermgmt', version: '1.14.0'
     implementation 'com.google.android.gms:play-services-maps:17.0.0'
 
+    //firebase core library
+    implementation 'com.google.firebase:firebase-core:17.0.0'
+
+    //firebase DB library
+    implementation 'com.google.firebase:firebase-database:19.1.0'
+
+    //firebase storage library
+    implementation 'com.google.firebase:firebase-storage:19.1.0'
+
 }
+
+apply plugin: 'com.google.gms.google-services'

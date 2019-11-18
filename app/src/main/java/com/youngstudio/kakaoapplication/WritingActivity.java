@@ -32,7 +32,7 @@ public class WritingActivity extends AppCompatActivity {
     String imgPath;
 
     ImageView iv_Kategorie,iv_map;
-    TextView tv_Kategotie,tv_map;
+    TextView tv_Kategotie,tv_map,gallery;
 
     String nickName , email;
 
@@ -60,6 +60,7 @@ public class WritingActivity extends AppCompatActivity {
         tv_Kategotie= findViewById(R.id.writing_tv_kategotie);
         tv_map= findViewById(R.id.writing_tv_map);
         iv_map= findViewById(R.id.writing_iv_map);
+        gallery= findViewById(R.id.writing_tv_gallery);
 
         iv= findViewById(R.id.writing_iv);
 
@@ -146,6 +147,15 @@ public class WritingActivity extends AppCompatActivity {
 //                requestPermissions(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},10);
 //            }
 //        }
+
+        gallery.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent= new Intent(Intent.ACTION_PICK);
+                intent.setType("image/*");
+                startActivityForResult(intent, 10);
+            }
+        });
 
     }
 

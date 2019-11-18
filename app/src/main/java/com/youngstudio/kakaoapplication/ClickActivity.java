@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -81,4 +82,11 @@ public class ClickActivity extends AppCompatActivity {
     }
 
 
-}
+    public void clickChatting(View view) {
+        Intent intent= new Intent(ClickActivity.this, ChatMainActivity.class);
+        startActivity(intent);
+    }
+
+
+
+}//ClickActivity

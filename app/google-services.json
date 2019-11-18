@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "95386742317",
+    "firebase_url": "https://eppplantmarket.firebaseio.com",
+    "project_id": "eppplantmarket",
+    "storage_bucket": "eppplantmarket.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:95386742317:android:3ff1d60c9c9d08a83d92a4",
+        "android_client_info": {
+          "package_name": "com.youngstudio.kakaoapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "95386742317-u15uqclvs8cebhf1ngssd26nv1dm6f15.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA9YgbQ7lqL-1Mo6kIAulUEAqgH6xC6ips"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "95386742317-u15uqclvs8cebhf1ngssd26nv1dm6f15.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

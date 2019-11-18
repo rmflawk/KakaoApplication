@@ -13,6 +13,7 @@ import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.LocationManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -74,11 +75,23 @@ public class MapActivity extends AppCompatActivity{
                 //Toast.makeText(MapActivity.this, address+"현재위치 \n위도 " + latitude + "\n경도 " + longitude, Toast.LENGTH_LONG).show();
                 textview_address.setText(address);
 
+                Intent intent= new Intent();
+                intent.setAction(Intent.ACTION_VIEW);
+
+                //지도좌표값 데이터 정보
+                Uri uri= Uri.parse("geo:"+ latitude + ","+longitude+"?z=16"+"&q="+latitude+","+longitude);// 끝에 (aa)라고 하면 마커에 이름찍힘
+                intent.setData(uri);
+                startActivity(intent);
 
 
 
-            }
+
+
+            }//onClick
         });
+
+
+
 
         pf_iv= findViewById(R.id.pf_iv);
         pf_iv.setOnClickListener(new View.OnClickListener() {
@@ -91,6 +104,8 @@ public class MapActivity extends AppCompatActivity{
                 finish();
             }
         });
+
+
     }//onCreate
 
     @Override

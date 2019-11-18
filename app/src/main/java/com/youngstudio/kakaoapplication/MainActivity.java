@@ -43,7 +43,10 @@ public class MainActivity extends AppCompatActivity {
         getEmail= getIntent().getStringExtra("email");
         //String getProfile= getIntent().getStringExtra("profile");
 
-        Toast.makeText(this, getName + getEmail , Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, getName + getEmail , Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, getName + "님 환영합니다" , Toast.LENGTH_SHORT).show();
+
+
         // 0K2ry0VYmL92cMZbtCuHA1t99ls=
 //        try {
 //            PackageInfo info = getPackageManager().getPackageInfo(getPackageName(), PackageManager.GET_SIGNATURES);
@@ -95,14 +98,14 @@ public class MainActivity extends AppCompatActivity {
                 //navigationView.getMenu().getItem(position).setChecked(true);
                 switch (position) {
                     case 0:
-                        MainActivity.main_tv.setText("도선동");
+                        //MainActivity.main_tv.setText("도선동");
                         MainActivity.main_iv.setVisibility(View.VISIBLE);
                         MainActivity.appBarLayout.setVisibility(View.VISIBLE);
                         navigationView.getMenu().getItem(position).setChecked(true);
                         break;
 
                     case 1:
-                        MainActivity.main_tv.setText("카테고리");
+                        //MainActivity.main_tv.setText("카테고리");
                         MainActivity.main_iv.setVisibility(View.GONE);
                         MainActivity.appBarLayout.setVisibility(View.GONE);
                         navigationView.getMenu().getItem(position).setChecked(true);
@@ -166,7 +169,7 @@ public class MainActivity extends AppCompatActivity {
             //FragmentTransaction transaction = fragmentManager.beginTransaction();
             switch (menuItem.getItemId()) {
                 case R.id.bnv_aa:
-                    MainActivity.main_tv.setText("도선동");
+                    //MainActivity.main_tv.setText("도선동");
                     MainActivity.main_iv.setVisibility(View.VISIBLE);
                     MainActivity.appBarLayout.setVisibility(View.VISIBLE);
                     //transaction.replace(R.id.relativelayout, page1Fragment).commitAllowingStateLoss();
@@ -175,7 +178,7 @@ public class MainActivity extends AppCompatActivity {
                     break;
 
                 case R.id.bnv_bb:
-                    MainActivity.main_tv.setText("카테고리");
+                    //MainActivity.main_tv.setText("카테고리");
                     MainActivity.main_iv.setVisibility(View.GONE);
                     MainActivity.appBarLayout.setVisibility(View.GONE);
                     //transaction.replace(R.id.relativelayout, page2Fragment).commitAllowingStateLoss();

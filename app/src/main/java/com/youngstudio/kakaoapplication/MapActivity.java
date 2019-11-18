@@ -34,6 +34,7 @@ public class MapActivity extends AppCompatActivity{
     String[] REQUIRED_PERMISSIONS  = {Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION};
     public static String[] array;
     ImageView pf_iv;
+    Button btn;
 
 
     @Override
@@ -41,6 +42,7 @@ public class MapActivity extends AppCompatActivity{
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map);
+        btn= findViewById(R.id.button);
 
 
         if (!checkLocationServicesStatus()) {
@@ -69,8 +71,12 @@ public class MapActivity extends AppCompatActivity{
                 array = address.split(" ");
                 address= array[0]+ " " +array[1]+ " " +array[2]+ " ";
 
-                Toast.makeText(MapActivity.this, address+"현재위치 \n위도 " + latitude + "\n경도 " + longitude, Toast.LENGTH_LONG).show();
+                //Toast.makeText(MapActivity.this, address+"현재위치 \n위도 " + latitude + "\n경도 " + longitude, Toast.LENGTH_LONG).show();
                 textview_address.setText(address);
+
+
+
+
             }
         });
 

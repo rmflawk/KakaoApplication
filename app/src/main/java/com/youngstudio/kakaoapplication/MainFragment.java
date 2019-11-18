@@ -80,7 +80,8 @@ public class MainFragment extends Fragment {//implements View.OnClickListener {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getActivity(), "UpLoad", Toast.LENGTH_SHORT).show();
+
+                    //Toast.makeText(getActivity(), "UpLoad", Toast.LENGTH_SHORT).show();
 
                 //서버주소
                 String serverUrl="http://rmflawkdk.dothome.co.kr/Android/loadDBtoJson.php";
@@ -147,11 +148,12 @@ public class MainFragment extends Fragment {//implements View.OnClickListener {
             @Override
             public void onRefresh() {
                 btn.performClick();
+                Toast.makeText(getActivity(), "새로고침", Toast.LENGTH_SHORT).show();
                 swipeRefreshLayout.setRefreshing(false);
             }
         });
 
-        //btn.performClick();
+        btn.performClick();
         return view;
     }
 

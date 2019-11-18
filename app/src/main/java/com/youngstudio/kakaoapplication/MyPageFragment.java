@@ -1,5 +1,6 @@
 package com.youngstudio.kakaoapplication;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -7,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -14,16 +16,20 @@ import androidx.fragment.app.Fragment;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
+import static android.app.Activity.RESULT_OK;
+
 public class MyPageFragment extends Fragment {
 
 
     LinearLayout layout;
-    Button profile;
+    Button profile, btnMap;
     CircleImageView circle_iv;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
     }
 
     @Nullable
@@ -57,11 +63,34 @@ public class MyPageFragment extends Fragment {
             }
         });
 
+        btnMap= view.findViewById(R.id.btn_map);
+        btnMap.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent= new Intent(getActivity(), MapActivity.class);
+                startActivityForResult(intent,10);
+            }
+        });
+
         return view;
 
+
+    }//onCreateView
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if(requestCode == 10){
+            if(resultCode == RESULT_OK){
+                MainActivity.main_tv.setText(data.getStringExtra("array1") + " "+ data.getStringExtra("array2")); // 현재위치 구 와 동까지 나옴
+
+            }else{
+                Toast.makeText(getActivity(), "결과값이 없습니다.", Toast.LENGTH_SHORT).show();
+            }
+        }
+
     }
-
-
 }//MyPageFragment
 
 

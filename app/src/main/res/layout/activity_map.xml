@@ -75,7 +75,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:text="현위치 검색"
+                android:text="현재 위치 받아오기"
                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:background="@drawable/radius"/>
 
@@ -110,7 +110,7 @@
             android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="확인"
+            android:text="동네인증 완료하기"
             android:background="@drawable/radius"
             android:onClick="clickOK"/>
 

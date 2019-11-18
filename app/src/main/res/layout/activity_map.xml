@@ -68,14 +68,14 @@
             android:orientation="horizontal"
             android:background="@color/white"
             android:paddingTop="8dp"
-            android:paddingLeft="8dp">
+            android:paddingLeft="40dp">
 
             <Button
                 android:id="@+id/button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:text="위치정보 검색"
+                android:text="현위치 검색"
                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:background="@drawable/radius"/>
 
@@ -92,8 +92,28 @@
                 android:textColor="#666666"/>
 
 
-
         </LinearLayout>
+
+
+        <!-- Google MapView를 가진 Fragment -->
+        <fragment
+            android:layout_marginTop="100dp"
+            android:layout_gravity="center"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:id="@+id/frag_map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"/>
+
+
+        <Button
+            android:layout_marginTop="50dp"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="확인"
+            android:background="@drawable/radius"
+            android:onClick="clickOK"/>
+
 
 
 

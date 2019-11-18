@@ -144,7 +144,11 @@ public class MainActivity extends AppCompatActivity {
     public void clickMap(View view) {
         Intent intent= new Intent(MainActivity.this, MapActivity.class);
         startActivityForResult(intent,10);
+        //startActivity(intent);
     }
+
+
+
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {

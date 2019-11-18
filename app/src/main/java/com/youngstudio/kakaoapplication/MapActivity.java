@@ -5,6 +5,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+import androidx.fragment.app.FragmentManager;
 
 import android.Manifest;
 import android.content.DialogInterface;
@@ -22,11 +23,20 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.UiSettings;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
+
 import java.io.IOException;
 import java.util.List;
 import java.util.Locale;
 
-public class MapActivity extends AppCompatActivity{
+public class MapActivity extends AppCompatActivity implements OnMapReadyCallback {
+
 
     private GpsTracker gpsTracker;
 
@@ -37,6 +47,11 @@ public class MapActivity extends AppCompatActivity{
     ImageView pf_iv;
     Button btn;
 
+    GoogleMap gMap;
+
+    double latitude;
+    double longitude;
+    Button ShowLocationButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -55,7 +70,7 @@ public class MapActivity extends AppCompatActivity{
         final TextView textview_address = findViewById(R.id.textview);
 
 
-        Button ShowLocationButton = findViewById(R.id.button);
+        ShowLocationButton = findViewById(R.id.button);
         ShowLocationButton.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -64,8 +79,8 @@ public class MapActivity extends AppCompatActivity{
 
                 gpsTracker = new GpsTracker(MapActivity.this);
 
-                double latitude = gpsTracker.getLatitude();
-                double longitude = gpsTracker.getLongitude();
+                latitude = gpsTracker.getLatitude();
+                longitude = gpsTracker.getLongitude();
 
                 String address = getCurrentAddress(latitude, longitude);
                 address= address.substring(5);
@@ -75,22 +90,24 @@ public class MapActivity extends AppCompatActivity{
                 //Toast.makeText(MapActivity.this, address+"현재위치 \n위도 " + latitude + "\n경도 " + longitude, Toast.LENGTH_LONG).show();
                 textview_address.setText(address);
 
-                Intent intent= new Intent();
-                intent.setAction(Intent.ACTION_VIEW);
+                //Intent intent= new Intent();
+                //intent.setAction(Intent.ACTION_VIEW);
 
                 //지도좌표값 데이터 정보
-                Uri uri= Uri.parse("geo:"+ latitude + ","+longitude+"?z=16"+"&q="+latitude+","+longitude);// 끝에 (aa)라고 하면 마커에 이름찍힘
-                intent.setData(uri);
-                startActivity(intent);
+                //Uri uri= Uri.parse("geo:"+ latitude + ","+longitude+"?z=16"+"&q="+latitude+","+longitude);// 끝에 (aa)라고 하면 마커에 이름찍힘
+                //intent.setData(uri);
+                //startActivity(intent);
 
+                //프레그먼트 관리자 객체 소환
+                FragmentManager fragmentManager= getSupportFragmentManager();
 
-
+                //관리자에게 xml에 있는 프레그먼트를 찾아와 달라고 요청
+                SupportMapFragment mapFragment= (SupportMapFragment)fragmentManager.findFragmentById(R.id.frag_map);
+                mapFragment.getMapAsync(MapActivity.this);
 
 
             }//onClick
         });
-
-
 
 
         pf_iv= findViewById(R.id.pf_iv);
@@ -103,10 +120,45 @@ public class MapActivity extends AppCompatActivity{
                 setResult(RESULT_OK, intent);
                 finish();
             }
+
         });
 
+        //ShowLocationButton.performClick();
 
     }//onCreate
+
+
+    @Override
+    public void onMapReady(GoogleMap googleMap) {
+
+        gMap=googleMap;
+
+        //ShowLocationButton.performClick();
+
+        LatLng SEOUL= new LatLng(latitude, longitude);
+
+        MarkerOptions markerOptions= new MarkerOptions();
+        markerOptions.position(SEOUL);
+        markerOptions.title("서울");
+        markerOptions.snippet("한국의 수도"); // 말풍선
+
+
+        gMap.addMarker(markerOptions);
+
+        //지도 위치 지정 및 줌
+        gMap.moveCamera(CameraUpdateFactory.newLatLng(SEOUL));
+        gMap.animateCamera(CameraUpdateFactory.newLatLngZoom(SEOUL,15)); // 1~25 1은지구
+
+        //대표적인 맵 설정
+        UiSettings settings= gMap.getUiSettings();
+        settings.setZoomControlsEnabled(true);
+
+    }
+
+    public void clickOK(View view) {
+        onBackPressed();
+    }
+
 
     @Override
     public void onBackPressed() {//뒤로가기버튼
@@ -270,5 +322,7 @@ public class MapActivity extends AppCompatActivity{
         return locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)
                 || locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER);
     }
+
+
 
 }

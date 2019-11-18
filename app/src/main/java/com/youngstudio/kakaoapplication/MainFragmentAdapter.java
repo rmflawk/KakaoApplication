@@ -97,8 +97,6 @@ public class MainFragmentAdapter extends RecyclerView.Adapter {
                     String kt= datas.get(position).kt;
 
 
-
-
                     //아이템의 상세 화면(DetailActivity)로 전환
                     Intent intent= new Intent(context, ClickActivity.class);
                     intent.putExtra("name", name);

@@ -135,19 +135,19 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
 
         //ShowLocationButton.performClick();
 
-        LatLng SEOUL= new LatLng(latitude, longitude);
+        LatLng latLng= new LatLng(latitude, longitude);
 
         MarkerOptions markerOptions= new MarkerOptions();
-        markerOptions.position(SEOUL);
-        markerOptions.title("서울");
-        markerOptions.snippet("한국의 수도"); // 말풍선
+        markerOptions.position(latLng);
+        //markerOptions.title("서울");
+        //markerOptions.snippet("한국의 수도"); // 말풍선
 
 
         gMap.addMarker(markerOptions);
 
         //지도 위치 지정 및 줌
-        gMap.moveCamera(CameraUpdateFactory.newLatLng(SEOUL));
-        gMap.animateCamera(CameraUpdateFactory.newLatLngZoom(SEOUL,15)); // 1~25 1은지구
+        gMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
+        gMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng,15)); // 1~25 1은지구
 
         //대표적인 맵 설정
         UiSettings settings= gMap.getUiSettings();

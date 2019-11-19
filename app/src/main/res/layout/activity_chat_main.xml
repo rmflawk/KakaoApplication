@@ -19,6 +19,8 @@
         android:padding="8dp"
         android:background="@drawable/back_et_name"
         android:textCursorDrawable="@drawable/et_name_cursor"/>
+
+
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/iv_profile"
         android:layout_width="80dp"

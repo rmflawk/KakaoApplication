@@ -17,6 +17,13 @@ public class ChatAdapter extends BaseAdapter {
     ArrayList<ChatItem> messageItems;
     LayoutInflater layoutInflater;
 
+    CircleImageView iv;
+    TextView tvName;
+    TextView tvMsg;
+    TextView tvTime;
+
+
+
     public ChatAdapter(ArrayList<ChatItem> messageItems, LayoutInflater layoutInflater) {
         this.messageItems = messageItems;
         this.layoutInflater = layoutInflater;
@@ -54,10 +61,10 @@ public class ChatAdapter extends BaseAdapter {
         }
 
         //만들어진 아이템뷰에 값들 설정
-        CircleImageView iv= itemView.findViewById(R.id.iv);
-        TextView tvName= itemView.findViewById(R.id.tv_name);
-        TextView tvMsg= itemView.findViewById(R.id.tv_msg);
-        TextView tvTime= itemView.findViewById(R.id.tv_time);
+        iv= itemView.findViewById(R.id.iv);
+        tvName= itemView.findViewById(R.id.tv_name);
+        tvMsg= itemView.findViewById(R.id.tv_msg);
+        tvTime= itemView.findViewById(R.id.tv_time);
 
         tvName.setText(item.getName());
         tvMsg.setText(item.getMessag());

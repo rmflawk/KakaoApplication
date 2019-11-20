@@ -46,32 +46,6 @@ public class MainFragmentAdapter extends RecyclerView.Adapter {
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
 
-
-
-//        if(n == 100){
-//            VH vh = (VH) holder;
-//            Item item = datas.get(position);
-//            if(datas.get(position).getKt().equals(MainActivity.kt)) {
-//
-//                vh.tvName.setText(item.getName());
-//                vh.tvDate.setText(item.getDate());
-//                vh.tvPrice.setText(item.getPrice());
-//
-//                //이미지가 너무크면 OOM(Out Of Memory)에러 발생
-//                //이를 방지하기 위해 Library(Picasso, Glide) 사용
-//                Glide.with(context).load(item.getImgPath()).into(vh.ivImg);
-//
-//            }else{
-//                //notifyItemRemoved(position);
-//                //notifyItemRangeChanged(position,datas.size());
-//
-//                vh.main_layout.setVisibility(View.GONE);
-//                vh.ccc.setVisibility(View.GONE);
-//
-//                //datas.remove(position);
-//            }
-//        }else{
-
             VH vh = (VH) holder;
 
             Item item = datas.get(position);
@@ -85,8 +59,6 @@ public class MainFragmentAdapter extends RecyclerView.Adapter {
             Glide.with(context).load(item.getImgPath()).into(vh.ivImg);
 
 
-
-        //}
 
     }//onBindViewHolder
 

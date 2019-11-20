@@ -182,30 +182,28 @@
 
 
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="26dp"
-                android:orientation="horizontal">
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:src="@drawable/ic_favorite_border_black_24dp"
-                    android:layout_gravity="center_vertical"/>
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="4dp"
-                    android:text="인기매물"
-                    android:textColor="#333333"
-                    android:textSize="16sp"
-                    android:background="@drawable/bg_botton"
-                    android:paddingRight="8dp"
-                    style="@style/Widget.AppCompat.Button.Borderless" />
-            </LinearLayout>
-
-
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="50dp"-->
+<!--                android:layout_marginTop="26dp"-->
+<!--                android:orientation="horizontal">-->
+<!--                <ImageView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginLeft="20dp"-->
+<!--                    android:src="@drawable/ic_favorite_border_black_24dp"-->
+<!--                    android:layout_gravity="center_vertical"/>-->
+<!--                <Button-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginBottom="4dp"-->
+<!--                    android:text="인기매물"-->
+<!--                    android:textColor="#333333"-->
+<!--                    android:textSize="16sp"-->
+<!--                    android:background="@drawable/bg_botton"-->
+<!--                    android:paddingRight="8dp"-->
+<!--                    style="@style/Widget.AppCompat.Button.Borderless" />-->
+<!--            </LinearLayout>-->
 
 
             <LinearLayout
@@ -241,10 +239,10 @@
                 android:paddingTop="18dp"
                 android:orientation="horizontal">
                 <ImageView
-                    android:layout_width="wrap_content"
+                    android:layout_width="25dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
-                    android:src="@drawable/ic_favorite_border_black_24dp"
+                    android:src="@drawable/door"
                     android:layout_gravity="center_vertical"/>
                 <Button
                     android:id="@+id/gagu"
@@ -267,10 +265,10 @@
                 android:paddingTop="18dp"
                 android:orientation="horizontal">
                 <ImageView
-                    android:layout_width="wrap_content"
+                    android:layout_width="25dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
-                    android:src="@drawable/ic_favorite_border_black_24dp"
+                    android:src="@drawable/parachute"
                     android:layout_gravity="center_vertical"/>
                 <Button
                     android:id="@+id/child"
@@ -346,10 +344,10 @@
                 android:paddingTop="18dp"
                 android:orientation="horizontal">
                 <ImageView
-                    android:layout_width="wrap_content"
+                    android:layout_width="25dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
-                    android:src="@drawable/ic_favorite_border_black_24dp"
+                    android:src="@drawable/art"
                     android:layout_gravity="center_vertical"/>
                 <Button
                     android:id="@+id/beauty"
@@ -371,10 +369,10 @@
                 android:paddingTop="18dp"
                 android:orientation="horizontal">
                 <ImageView
-                    android:layout_width="wrap_content"
+                    android:layout_width="25dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
-                    android:src="@drawable/ic_favorite_border_black_24dp"
+                    android:src="@drawable/briefcase"
                     android:layout_gravity="center_vertical"/>
                 <Button
                     android:id="@+id/man"
@@ -449,10 +447,10 @@
                 android:paddingTop="18dp"
                 android:orientation="horizontal">
                 <ImageView
-                    android:layout_width="wrap_content"
+                    android:layout_width="25dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
-                    android:src="@drawable/ic_favorite_border_black_24dp"
+                    android:src="@drawable/truck"
                     android:layout_gravity="center_vertical"/>
                 <Button
                     android:id="@+id/book"
@@ -475,10 +473,10 @@
                 android:paddingTop="18dp"
                 android:orientation="horizontal">
                 <ImageView
-                    android:layout_width="wrap_content"
+                    android:layout_width="25dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
-                    android:src="@drawable/ic_favorite_border_black_24dp"
+                    android:src="@drawable/swatches"
                     android:layout_gravity="center_vertical"/>
                 <Button
                     android:id="@+id/pat"
@@ -501,10 +499,10 @@
                 android:paddingTop="18dp"
                 android:orientation="horizontal">
                 <ImageView
-                    android:layout_width="wrap_content"
+                    android:layout_width="25dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
-                    android:src="@drawable/ic_favorite_border_black_24dp"
+                    android:src="@drawable/colorwheel"
                     android:layout_gravity="center_vertical"/>
                 <Button
                     android:id="@+id/guitar"
@@ -526,10 +524,10 @@
                 android:paddingTop="18dp"
                 android:orientation="horizontal">
                 <ImageView
-                    android:layout_width="wrap_content"
+                    android:layout_width="25dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
-                    android:src="@drawable/ic_favorite_border_black_24dp"
+                    android:src="@drawable/car"
                     android:layout_gravity="center_vertical"/>
                 <Button
                     android:id="@+id/car"
@@ -552,10 +550,10 @@
                 android:paddingTop="18dp"
                 android:orientation="horizontal">
                 <ImageView
-                    android:layout_width="wrap_content"
+                    android:layout_width="25dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
-                    android:src="@drawable/ic_favorite_border_black_24dp"
+                    android:src="@drawable/brightness"
                     android:layout_gravity="center_vertical"/>
                 <Button
                     android:id="@+id/buy"
@@ -571,185 +569,9 @@
             </LinearLayout>
 
 
-            <View style="@style/Divider"
-                android:layout_marginTop="16dp"/>
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="동네홍보"
-                android:textSize="17sp"
-                android:textStyle="bold"
-                android:textColor="#000000"
-                android:layout_marginTop="16dp"
-                android:layout_marginLeft="18dp"
-                android:background="@color/white"/>
-
-
-
-
-
-
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:paddingTop="18dp"
-                android:orientation="horizontal">
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:src="@drawable/ic_favorite_border_black_24dp"
-                    android:layout_gravity="center_vertical"/>
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="4dp"
-                    android:paddingLeft="16dp"
-                    android:text="동네 구인구직"
-                    android:textColor="#333333"
-                    android:textSize="16sp"
-                    android:background="@drawable/bg_botton"
-                    android:paddingRight="8dp"
-                    style="@style/Widget.AppCompat.Button.Borderless" />
-            </LinearLayout>
-
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:paddingTop="18dp"
-                android:orientation="horizontal">
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:src="@drawable/ic_favorite_border_black_24dp"
-                    android:layout_gravity="center_vertical"/>
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="4dp"
-                    android:text="부동산"
-                    android:textColor="#333333"
-                    android:textSize="16sp"
-                    android:background="@drawable/bg_botton"
-                    android:paddingRight="8dp"
-                    style="@style/Widget.AppCompat.Button.Borderless" />
-            </LinearLayout>
-
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:paddingTop="18dp"
-                android:orientation="horizontal">
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:src="@drawable/ic_favorite_border_black_24dp"
-                    android:layout_gravity="center_vertical"/>
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="4dp"
-                    android:text="농수산물"
-                    android:textColor="#333333"
-                    android:textSize="16sp"
-                    android:background="@drawable/bg_botton"
-                    android:paddingRight="8dp"
-                    style="@style/Widget.AppCompat.Button.Borderless" />
-            </LinearLayout>
-
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:paddingTop="18dp"
-                android:orientation="horizontal">
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:src="@drawable/ic_favorite_border_black_24dp"
-                    android:layout_gravity="center_vertical"/>
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="4dp"
-                    android:paddingLeft="16dp"
-                    android:text="지역업체 소개"
-                    android:textColor="#333333"
-                    android:textSize="16sp"
-                    android:background="@drawable/bg_botton"
-                    android:paddingRight="8dp"
-                    style="@style/Widget.AppCompat.Button.Borderless" />
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:paddingTop="18dp"
-                android:orientation="horizontal">
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:src="@drawable/ic_favorite_border_black_24dp"
-                    android:layout_gravity="center_vertical"/>
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="4dp"
-                    android:paddingLeft="16dp"
-                    android:text="과외/클래스 모집"
-                    android:textColor="#333333"
-                    android:textSize="16sp"
-                    android:background="@drawable/bg_botton"
-                    android:paddingRight="8dp"
-                    style="@style/Widget.AppCompat.Button.Borderless" />
-            </LinearLayout>
-
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:paddingTop="18dp"
-                android:orientation="horizontal">
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:src="@drawable/ic_favorite_border_black_24dp"
-                    android:layout_gravity="center_vertical"/>
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="4dp"
-                    android:paddingLeft="16dp"
-                    android:text="전시/공연/행사"
-                    android:textColor="#333333"
-                    android:textSize="16sp"
-                    android:background="@drawable/bg_botton"
-                    android:paddingRight="8dp"
-                    style="@style/Widget.AppCompat.Button.Borderless" />
-            </LinearLayout>
-
-
-
-
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="100dp">
+                android:layout_height="50dp">
             </LinearLayout>
 
 
@@ -760,10 +582,183 @@
     </ScrollView>
 
 
-
-
-
 </androidx.drawerlayout.widget.DrawerLayout>
+
+
+<!--            <View style="@style/Divider"-->
+<!--                android:layout_marginTop="16dp"/>-->
+
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="동네홍보"-->
+<!--                android:textSize="17sp"-->
+<!--                android:textStyle="bold"-->
+<!--                android:textColor="#000000"-->
+<!--                android:layout_marginTop="16dp"-->
+<!--                android:layout_marginLeft="18dp"-->
+<!--                android:background="@color/white"/>-->
+
+
+
+
+
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="50dp"-->
+<!--                android:paddingTop="18dp"-->
+<!--                android:orientation="horizontal">-->
+<!--                <ImageView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginLeft="20dp"-->
+<!--                    android:src="@drawable/ic_favorite_border_black_24dp"-->
+<!--                    android:layout_gravity="center_vertical"/>-->
+<!--                <Button-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginBottom="4dp"-->
+<!--                    android:paddingLeft="16dp"-->
+<!--                    android:text="동네 구인구직"-->
+<!--                    android:textColor="#333333"-->
+<!--                    android:textSize="16sp"-->
+<!--                    android:background="@drawable/bg_botton"-->
+<!--                    android:paddingRight="8dp"-->
+<!--                    style="@style/Widget.AppCompat.Button.Borderless" />-->
+<!--            </LinearLayout>-->
+
+
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="50dp"-->
+<!--                android:paddingTop="18dp"-->
+<!--                android:orientation="horizontal">-->
+<!--                <ImageView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginLeft="20dp"-->
+<!--                    android:src="@drawable/ic_favorite_border_black_24dp"-->
+<!--                    android:layout_gravity="center_vertical"/>-->
+<!--                <Button-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginBottom="4dp"-->
+<!--                    android:text="부동산"-->
+<!--                    android:textColor="#333333"-->
+<!--                    android:textSize="16sp"-->
+<!--                    android:background="@drawable/bg_botton"-->
+<!--                    android:paddingRight="8dp"-->
+<!--                    style="@style/Widget.AppCompat.Button.Borderless" />-->
+<!--            </LinearLayout>-->
+
+
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="50dp"-->
+<!--                android:paddingTop="18dp"-->
+<!--                android:orientation="horizontal">-->
+<!--                <ImageView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginLeft="20dp"-->
+<!--                    android:src="@drawable/ic_favorite_border_black_24dp"-->
+<!--                    android:layout_gravity="center_vertical"/>-->
+<!--                <Button-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginBottom="4dp"-->
+<!--                    android:text="농수산물"-->
+<!--                    android:textColor="#333333"-->
+<!--                    android:textSize="16sp"-->
+<!--                    android:background="@drawable/bg_botton"-->
+<!--                    android:paddingRight="8dp"-->
+<!--                    style="@style/Widget.AppCompat.Button.Borderless" />-->
+<!--            </LinearLayout>-->
+
+
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="50dp"-->
+<!--                android:paddingTop="18dp"-->
+<!--                android:orientation="horizontal">-->
+<!--                <ImageView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginLeft="20dp"-->
+<!--                    android:src="@drawable/ic_favorite_border_black_24dp"-->
+<!--                    android:layout_gravity="center_vertical"/>-->
+<!--                <Button-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginBottom="4dp"-->
+<!--                    android:paddingLeft="16dp"-->
+<!--                    android:text="지역업체 소개"-->
+<!--                    android:textColor="#333333"-->
+<!--                    android:textSize="16sp"-->
+<!--                    android:background="@drawable/bg_botton"-->
+<!--                    android:paddingRight="8dp"-->
+<!--                    style="@style/Widget.AppCompat.Button.Borderless" />-->
+<!--            </LinearLayout>-->
+
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="50dp"-->
+<!--                android:paddingTop="18dp"-->
+<!--                android:orientation="horizontal">-->
+<!--                <ImageView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginLeft="20dp"-->
+<!--                    android:src="@drawable/ic_favorite_border_black_24dp"-->
+<!--                    android:layout_gravity="center_vertical"/>-->
+<!--                <Button-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginBottom="4dp"-->
+<!--                    android:paddingLeft="16dp"-->
+<!--                    android:text="과외/클래스 모집"-->
+<!--                    android:textColor="#333333"-->
+<!--                    android:textSize="16sp"-->
+<!--                    android:background="@drawable/bg_botton"-->
+<!--                    android:paddingRight="8dp"-->
+<!--                    style="@style/Widget.AppCompat.Button.Borderless" />-->
+<!--            </LinearLayout>-->
+
+
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="50dp"-->
+<!--                android:paddingTop="18dp"-->
+<!--                android:orientation="horizontal">-->
+<!--                <ImageView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginLeft="20dp"-->
+<!--                    android:src="@drawable/ic_favorite_border_black_24dp"-->
+<!--                    android:layout_gravity="center_vertical"/>-->
+<!--                <Button-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginBottom="4dp"-->
+<!--                    android:paddingLeft="16dp"-->
+<!--                    android:text="전시/공연/행사"-->
+<!--                    android:textColor="#333333"-->
+<!--                    android:textSize="16sp"-->
+<!--                    android:background="@drawable/bg_botton"-->
+<!--                    android:paddingRight="8dp"-->
+<!--                    style="@style/Widget.AppCompat.Button.Borderless" />-->
+<!--            </LinearLayout>-->
+
+
+
+
 
 
 

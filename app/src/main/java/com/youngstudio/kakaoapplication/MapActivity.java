@@ -5,7 +5,9 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.Manifest;
 import android.content.DialogInterface;
@@ -45,7 +47,7 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
     String[] REQUIRED_PERMISSIONS  = {Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION};
     public static String[] array;
     ImageView pf_iv;
-    Button btn;
+    //Button btn;
 
     GoogleMap gMap;
 
@@ -58,7 +60,7 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map);
-        btn= findViewById(R.id.button);
+        //btn= findViewById(R.id.button);
 
 
         if (!checkLocationServicesStatus()) {
@@ -76,6 +78,8 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
             @Override
             public void onClick(View arg0)
             {
+
+                try {
 
                 gpsTracker = new GpsTracker(MapActivity.this);
 
@@ -104,6 +108,10 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
                 //관리자에게 xml에 있는 프레그먼트를 찾아와 달라고 요청
                 SupportMapFragment mapFragment= (SupportMapFragment)fragmentManager.findFragmentById(R.id.frag_map);
                 mapFragment.getMapAsync(MapActivity.this);
+
+                } catch (Exception e){
+                    Toast.makeText(gpsTracker, "다시 한 번 눌러주세요", Toast.LENGTH_SHORT).show();
+                }
 
 
             }//onClick
@@ -318,10 +326,12 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
 
     public boolean checkLocationServicesStatus() {
         LocationManager locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
-
         return locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)
                 || locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER);
     }
+
+
+
 
 
 

@@ -40,7 +40,7 @@ public class IntroActivity extends AppCompatActivity {
                 //startActivity(new Intent(SecondActivity.this, MainActivity.class));
 //                main= new MainActivity();
 //                main.plus();
-                Intent intent= new Intent(IntroActivity.this,MainActivity.class);
+                Intent intent= new Intent(IntroActivity.this,LoginActivity.class);
                 startActivity(intent);
                 finish();
             }

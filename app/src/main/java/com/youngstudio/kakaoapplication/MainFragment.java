@@ -38,7 +38,7 @@ public class MainFragment extends Fragment {//implements View.OnClickListener {
     MainFragmentAdapter adapter;
     ArrayList<Item> datas = new ArrayList<>();
 
-    Button btn;
+    public static Button btn;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -53,6 +53,9 @@ public class MainFragment extends Fragment {//implements View.OnClickListener {
             }
         }
 
+        //Toast.makeText(getActivity(), MainActivity.kt, Toast.LENGTH_SHORT).show();
+
+
     }//onCreate
 
 
@@ -60,12 +63,14 @@ public class MainFragment extends Fragment {//implements View.OnClickListener {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
+
         View view = inflater.inflate(R.layout.fragment_main, container, false);
 
         recyclerView = view.findViewById(R.id.recycler_main);
         adapter = new MainFragmentAdapter(datas, getActivity());
         recyclerView.setAdapter(adapter);
 
+        //Toast.makeText(getActivity(), MainActivity.kt, Toast.LENGTH_SHORT).show();
         //리사이클러뷰 구분선 추가
         DividerItemDecoration dividerItemDecoration =
                 new DividerItemDecoration(recyclerView.getContext(), new LinearLayoutManager(getActivity()).getOrientation());
@@ -73,88 +78,106 @@ public class MainFragment extends Fragment {//implements View.OnClickListener {
 
         //setHasOptionsMenu(true);
 
+//        String aa = getArguments().getString("a"); // 전달한 key 값
+//        Toast.makeText(getActivity(), aa, Toast.LENGTH_SHORT).show();
+
+
 
         btn= view.findViewById(R.id.btn);
 
-        //btn.setOnClickListener(this);
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        try {
+
+
+            //btn.setOnClickListener(this);
+            btn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
 
                     //Toast.makeText(getActivity(), "UpLoad", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(getActivity(), MainActivity.kt, Toast.LENGTH_SHORT).show();
 
-                //서버주소
-                String serverUrl="http://rmflawkdk.dothome.co.kr/Android/loadDBtoJson.php";
+                    //서버주소
+                    String serverUrl = "http://rmflawkdk.dothome.co.kr/Android/loadDBtoJson.php";
 
-                //결과를 JsonArray받을 것이므로...
-                //StringRequest가 아니라...
-                //JsonArrayRequest를 이용할 것임
-                JsonArrayRequest jsonArrayRequest= new JsonArrayRequest(Request.Method.POST, serverUrl, null, new Response.Listener<JSONArray>() {
-                    @Override
-                    public void onResponse(JSONArray response) {
-                        //Toast.makeText(MainActivity.this, response.toString(), Toast.LENGTH_SHORT).show();
+                    //결과를 JsonArray받을 것이므로...
+                    //StringRequest가 아니라...
+                    //JsonArrayRequest를 이용할 것임
+                    JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.POST, serverUrl, null, new Response.Listener<JSONArray>() {
+                        @Override
+                        public void onResponse(JSONArray response) {
+                            //Toast.makeText(MainActivity.this, response.toString(), Toast.LENGTH_SHORT).show();
 
-                        //파라미터로 응답받은 결과 JsonArray를 분석
+                            //파라미터로 응답받은 결과 JsonArray를 분석
 
-                        datas.clear();
-                        adapter.notifyDataSetChanged();
+                            datas.clear();
+                            adapter.notifyDataSetChanged();
 
-                        try {
-                            for(int i=0; i<response.length(); i++){
-                                JSONObject jsonObject= response.getJSONObject(i);
+                            try {
+                                for (int i = 0; i < response.length(); i++) {
+                                    JSONObject jsonObject = response.getJSONObject(i);
 
-                                int no= Integer.parseInt( jsonObject.getString("no") );
+                                    int no = Integer.parseInt(jsonObject.getString("no"));
 
-                                String nickname= jsonObject.getString("nickname");
-                                String email= jsonObject.getString("email");
+                                    String nickname = jsonObject.getString("nickname");
+                                    String email = jsonObject.getString("email");
 
-                                String name= jsonObject.getString("name");
-                                String msg= jsonObject.getString("message");
-                                String price= jsonObject.getString("price");
-                                String kt= jsonObject.getString("kt");
-                                String imgPath= jsonObject.getString("imgPath");
-                                String date= jsonObject.getString("date");
+                                    String name = jsonObject.getString("name");
+                                    String msg = jsonObject.getString("message");
+                                    String price = jsonObject.getString("price");
+                                    String kt = jsonObject.getString("kt");
+                                    String imgPath = jsonObject.getString("imgPath");
+                                    String date = jsonObject.getString("date");
 
 
-                                //이미지 경로의 경우 서버IP가 제외된 주소이므로(uploads/xxxxx.jpg) 바로 사용 불가.
-                                imgPath = "http://rmflawkdk.dothome.co.kr/Android/"+imgPath;
+                                    //이미지 경로의 경우 서버IP가 제외된 주소이므로(uploads/xxxxx.jpg) 바로 사용 불가.
+                                    imgPath = "http://rmflawkdk.dothome.co.kr/Android/" + imgPath;
 
-                                datas.add( 0 , new Item(no, nickname, email, name, price, kt, date, msg, imgPath) );
-                                adapter.notifyItemInserted(0);
+                                    
+                                    datas.add(0, new Item(no, nickname, email, name, price, kt, date, msg, imgPath));
+                                    adapter.notifyItemInserted(0);
+                                }
+
+                            } catch (JSONException e) {
+                                e.printStackTrace();
                             }
 
-                        } catch (JSONException e) {
-                            e.printStackTrace();
                         }
+                    }, new Response.ErrorListener() {
+                        @Override
+                        public void onErrorResponse(VolleyError error) {
+                            //Toast.makeText(getActivity(), "ERROR", Toast.LENGTH_SHORT).show();
+                        }
+                    });
 
-                    }
-                }, new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        //Toast.makeText(getActivity(), "ERROR", Toast.LENGTH_SHORT).show();
-                    }
-                });
+                    //실제 요청작업을 수행해주는 요청큐 객체 생성
+                    RequestQueue requestQueue = Volley.newRequestQueue(getActivity());
 
-                //실제 요청작업을 수행해주는 요청큐 객체 생성
-                RequestQueue requestQueue= Volley.newRequestQueue(getActivity());
+                    //요청큐에 요청객체 추가
+                    requestQueue.add(jsonArrayRequest);
+                }
+            });
 
-                //요청큐에 요청객체 추가
-                requestQueue.add(jsonArrayRequest);
-            }
-        });
 
-        final SwipeRefreshLayout swipeRefreshLayout= view.findViewById(R.id.swiperefresh_layout);
-        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-            @Override
-            public void onRefresh() {
-                btn.performClick();
-                Toast.makeText(getActivity(), "새로고침", Toast.LENGTH_SHORT).show();
-                swipeRefreshLayout.setRefreshing(false);
-            }
-        });
+            final SwipeRefreshLayout swipeRefreshLayout = view.findViewById(R.id.swiperefresh_layout);
+            swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+                @Override
+                public void onRefresh() {
+                    //MainFragmentAdapter.n = 0;
+                    btn.performClick();
+                    Toast.makeText(getActivity(), "새로고침", Toast.LENGTH_SHORT).show();
+                    swipeRefreshLayout.setRefreshing(false);
+                }
+            });
+
+        }catch (Exception e){
+            Toast.makeText(getActivity(), "새로고침 해주세요", Toast.LENGTH_SHORT).show();
+        }
 
         btn.performClick();
+
         return view;
+
+
     }
 
 //    @Override

@@ -7,7 +7,12 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.Signature;
 import android.os.Bundle;
+import android.util.Base64;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -18,10 +23,13 @@ import android.widget.Toast;
 import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+
 public class MainActivity extends AppCompatActivity {
 
-    ViewPager pager;
-    MainAdapter adapter;
+    public static ViewPager pager;
+    public static MainAdapter adapter;
 
     public static BottomNavigationView navigationView;
     public static TextView main_tv;
@@ -30,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
     public static Toolbar toolbar;
     public static String getName;
     public static String getEmail;
+    public static String kt;
 
 
     @Override
@@ -45,7 +54,6 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(this, getName + "님 환영합니다" , Toast.LENGTH_SHORT).show();
 
 
-        // 0K2ry0VYmL92cMZbtCuHA1t99ls=
 //        try {
 //            PackageInfo info = getPackageManager().getPackageInfo(getPackageName(), PackageManager.GET_SIGNATURES);
 //            for (Signature signature : info.signatures) {
@@ -138,14 +146,10 @@ public class MainActivity extends AppCompatActivity {
     }//onCreate
 
 
-
     public void clickMap(View view) {
         Intent intent= new Intent(MainActivity.this, MapActivity.class);
         startActivityForResult(intent,10);
-        //startActivity(intent);
     }
-
-
 
 
     @Override

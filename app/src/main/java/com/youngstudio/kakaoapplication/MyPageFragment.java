@@ -22,8 +22,10 @@ public class MyPageFragment extends Fragment {
 
 
     LinearLayout layout;
-    Button profile, btnMap;
+    Button profile, btnMap,bb;
     CircleImageView circle_iv;
+
+
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -71,6 +73,20 @@ public class MyPageFragment extends Fragment {
                 startActivityForResult(intent,10);
             }
         });
+
+
+
+//        bb= view.findViewById(R.id.bb);
+//        bb.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                String a=null;
+//                if(getArguments() != null){
+//                    a = getArguments().getString("a");
+//                }
+//                Toast.makeText(getActivity(), a, Toast.LENGTH_SHORT).show();
+//            }
+//        });
 
         return view;
 

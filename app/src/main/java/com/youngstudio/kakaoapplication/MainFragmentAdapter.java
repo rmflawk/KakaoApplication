@@ -9,10 +9,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -23,6 +25,7 @@ public class MainFragmentAdapter extends RecyclerView.Adapter {
 
     ArrayList<Item> datas;
     Context context;
+    public static int n;
 
     public MainFragmentAdapter(ArrayList<Item> datas, Context context) {
         this.datas = datas;
@@ -40,22 +43,53 @@ public class MainFragmentAdapter extends RecyclerView.Adapter {
         return vh;
     }
 
+    void setDatas(ArrayList<Item> datas){
+        this.datas= datas;
+    }
+
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
 
-        VH vh= (VH)holder;
 
-        Item item= datas.get(position);
 
-        vh.tvName.setText(item.getName());
-        vh.tvDate.setText(item.getDate());
-        vh.tvPrice.setText(item.getPrice());
+//        if(n == 100){
+//            VH vh = (VH) holder;
+//            Item item = datas.get(position);
+//            if(datas.get(position).getKt().equals(MainActivity.kt)) {
+//
+//                vh.tvName.setText(item.getName());
+//                vh.tvDate.setText(item.getDate());
+//                vh.tvPrice.setText(item.getPrice());
+//
+//                //이미지가 너무크면 OOM(Out Of Memory)에러 발생
+//                //이를 방지하기 위해 Library(Picasso, Glide) 사용
+//                Glide.with(context).load(item.getImgPath()).into(vh.ivImg);
+//
+//            }else{
+//                //notifyItemRemoved(position);
+//                //notifyItemRangeChanged(position,datas.size());
+//
+//                vh.main_layout.setVisibility(View.GONE);
+//                vh.ccc.setVisibility(View.GONE);
+//
+//                //datas.remove(position);
+//            }
+//        }else{
+            VH vh = (VH) holder;
 
-        //이미지가 너무크면 OOM(Out Of Memory)에러 발생
-        //이를 방지하기 위해 Library(Picasso, Glide) 사용
-        Glide.with(context).load(item.getImgPath()).into(vh.ivImg);
-    }
+            Item item = datas.get(position);
+
+            vh.tvName.setText(item.getName());
+            vh.tvDate.setText(item.getDate());
+            vh.tvPrice.setText(item.getPrice());
+
+            //이미지가 너무크면 OOM(Out Of Memory)에러 발생
+            //이를 방지하기 위해 Library(Picasso, Glide) 사용
+            Glide.with(context).load(item.getImgPath()).into(vh.ivImg);
+        //}
+
+    }//onBindViewHolder
 
     @Override
     public int getItemCount() {
@@ -70,9 +104,15 @@ public class MainFragmentAdapter extends RecyclerView.Adapter {
         TextView tvPrice;
         ImageView ivImg;
 
+        CardView ccc;
+
+        LinearLayout main_layout;
+
         public VH(@NonNull View itemView) {
             super(itemView);
 
+            ccc= itemView.findViewById(R.id.ccc);
+            main_layout= itemView.findViewById(R.id.main_layout);
             ivImg= itemView.findViewById(R.id.main_iv);
             tvName= itemView.findViewById(R.id.main_tv_name);
             tvDate= itemView.findViewById(R.id.main_tv_date);

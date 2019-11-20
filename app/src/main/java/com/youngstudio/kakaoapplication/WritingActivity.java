@@ -37,7 +37,7 @@ public class WritingActivity extends AppCompatActivity {
     String nickName , email;
 
 
-    String[] items= new String[]{"디지털/가전", "가구/인테리어", "유아/유아도서","생활/가공식품","여성의류/잡화","남성패션/잡화",
+    String[] items= new String[]{"디지털/가전", "가구/인테리어", "유아동/유아도서","생활/가공식품","여성의류/잡화","남성패션/잡화",
             "뷰티미용","스포츠/레저","게임/취미","도서/티켓/음반","반려동물용품","기타 중고물품","삽니다!!"};
 
     String[] datas= new String[]{"강서구","양천구","구로구","영등포구","금천구","동작구","관악구","서초구","강남구","송파구","강동구",

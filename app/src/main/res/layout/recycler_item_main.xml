@@ -4,9 +4,11 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:contentPaddingTop="4dp"
+    android:id="@+id/ccc"
     app:cardBackgroundColor="#ffffff">
 
     <LinearLayout
+        android:id="@+id/main_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal">

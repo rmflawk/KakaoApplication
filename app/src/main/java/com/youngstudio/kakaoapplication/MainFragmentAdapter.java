@@ -25,7 +25,6 @@ public class MainFragmentAdapter extends RecyclerView.Adapter {
 
     ArrayList<Item> datas;
     Context context;
-    public static int n;
 
     public MainFragmentAdapter(ArrayList<Item> datas, Context context) {
         this.datas = datas;
@@ -41,10 +40,6 @@ public class MainFragmentAdapter extends RecyclerView.Adapter {
 
         VH vh= new VH(itemView);
         return vh;
-    }
-
-    void setDatas(ArrayList<Item> datas){
-        this.datas= datas;
     }
 
 
@@ -76,6 +71,7 @@ public class MainFragmentAdapter extends RecyclerView.Adapter {
 //                //datas.remove(position);
 //            }
 //        }else{
+
             VH vh = (VH) holder;
 
             Item item = datas.get(position);
@@ -87,6 +83,9 @@ public class MainFragmentAdapter extends RecyclerView.Adapter {
             //이미지가 너무크면 OOM(Out Of Memory)에러 발생
             //이를 방지하기 위해 Library(Picasso, Glide) 사용
             Glide.with(context).load(item.getImgPath()).into(vh.ivImg);
+
+
+
         //}
 
     }//onBindViewHolder

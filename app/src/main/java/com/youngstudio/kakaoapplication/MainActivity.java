@@ -38,7 +38,8 @@ public class MainActivity extends AppCompatActivity {
     public static Toolbar toolbar;
     public static String getName;
     public static String getEmail;
-    public static String kt;
+    public static String kt="kt";
+    public static int i=0;
 
 
     @Override

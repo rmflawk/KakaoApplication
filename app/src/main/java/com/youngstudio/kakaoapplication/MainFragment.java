@@ -38,6 +38,7 @@ public class MainFragment extends Fragment {//implements View.OnClickListener {
     MainFragmentAdapter adapter;
     ArrayList<Item> datas = new ArrayList<>();
 
+
     public static Button btn;
 
     @Override
@@ -53,7 +54,6 @@ public class MainFragment extends Fragment {//implements View.OnClickListener {
             }
         }
 
-        //Toast.makeText(getActivity(), MainActivity.kt, Toast.LENGTH_SHORT).show();
 
 
     }//onCreate
@@ -65,28 +65,24 @@ public class MainFragment extends Fragment {//implements View.OnClickListener {
 
 
         View view = inflater.inflate(R.layout.fragment_main, container, false);
+        try {
 
-        recyclerView = view.findViewById(R.id.recycler_main);
-        adapter = new MainFragmentAdapter(datas, getActivity());
-        recyclerView.setAdapter(adapter);
+            recyclerView = view.findViewById(R.id.recycler_main);
+            adapter = new MainFragmentAdapter(datas, getActivity());
+            recyclerView.setAdapter(adapter);
 
-        //Toast.makeText(getActivity(), MainActivity.kt, Toast.LENGTH_SHORT).show();
-        //리사이클러뷰 구분선 추가
-        DividerItemDecoration dividerItemDecoration =
-                new DividerItemDecoration(recyclerView.getContext(), new LinearLayoutManager(getActivity()).getOrientation());
-        recyclerView.addItemDecoration(dividerItemDecoration);
+            //Toast.makeText(getActivity(), MainActivity.kt, Toast.LENGTH_SHORT).show();
+            //리사이클러뷰 구분선 추가
+            DividerItemDecoration dividerItemDecoration =
+                    new DividerItemDecoration(recyclerView.getContext(), new LinearLayoutManager(getActivity()).getOrientation());
+            recyclerView.addItemDecoration(dividerItemDecoration);
 
-        //setHasOptionsMenu(true);
+            //setHasOptionsMenu(true);
 
 //        String aa = getArguments().getString("a"); // 전달한 key 값
 //        Toast.makeText(getActivity(), aa, Toast.LENGTH_SHORT).show();
 
-
-
-        btn= view.findViewById(R.id.btn);
-
-        try {
-
+            btn = view.findViewById(R.id.btn);
 
             //btn.setOnClickListener(this);
             btn.setOnClickListener(new View.OnClickListener() {
@@ -132,9 +128,17 @@ public class MainFragment extends Fragment {//implements View.OnClickListener {
                                     //이미지 경로의 경우 서버IP가 제외된 주소이므로(uploads/xxxxx.jpg) 바로 사용 불가.
                                     imgPath = "http://rmflawkdk.dothome.co.kr/Android/" + imgPath;
 
-                                    
-                                    datas.add(0, new Item(no, nickname, email, name, price, kt, date, msg, imgPath));
-                                    adapter.notifyItemInserted(0);
+                                    if(MainActivity.i==0){
+                                        datas.add(0, new Item(no, nickname, email, name, price, kt, date, msg, imgPath));
+                                        adapter.notifyItemInserted(0);
+                                    }else{
+                                        if (MainActivity.kt.equals(kt)){
+                                            datas.add(0, new Item(no, nickname, email, name, price, kt, date, msg, imgPath));
+                                            adapter.notifyItemInserted(0);
+                                        }else{
+
+                                        }
+                                    }
                                 }
 
                             } catch (JSONException e) {
@@ -163,6 +167,7 @@ public class MainFragment extends Fragment {//implements View.OnClickListener {
                 @Override
                 public void onRefresh() {
                     //MainFragmentAdapter.n = 0;
+                    MainActivity.i=0;
                     btn.performClick();
                     Toast.makeText(getActivity(), "새로고침", Toast.LENGTH_SHORT).show();
                     swipeRefreshLayout.setRefreshing(false);

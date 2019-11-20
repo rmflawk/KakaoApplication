@@ -47,7 +47,6 @@ public class MainFragmentAdapter extends RecyclerView.Adapter {
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
 
 
-
             VH vh = (VH) holder;
 
             Item item = datas.get(position);

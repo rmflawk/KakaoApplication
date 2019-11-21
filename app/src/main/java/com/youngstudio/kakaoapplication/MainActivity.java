@@ -41,10 +41,12 @@ public class MainActivity extends AppCompatActivity {
     public static String getProfile;
     public static String getGender;
     public static String kt="kt";
-    public static String ChatRoomName;
-    public static String ChatUserName;
+    public static String chatRoomName;
+    public static String chatUserName;
+    public static String address;
 
     public static int i=0;
+    public static int a=0;
 
 
     @Override
@@ -57,13 +59,14 @@ public class MainActivity extends AppCompatActivity {
         getProfile= getIntent().getStringExtra("profile");
         getGender= getIntent().getStringExtra("gender");
 
-        ChatUserName = getName;
+
+        chatUserName = getName;
         //ChatG.profileUrl= getProfile;
 
         //Toast.makeText(this, ChatG.nickName + ChatG.profileUrl + getProfile + getGender , Toast.LENGTH_SHORT).show();
 
         //Toast.makeText(this, getName + getEmail , Toast.LENGTH_SHORT).show();
-        Toast.makeText(this, ChatUserName + "님 환영합니다" , Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, chatUserName + "님 환영합니다" , Toast.LENGTH_SHORT).show();
 
 
 //        try {
@@ -171,11 +174,14 @@ public class MainActivity extends AppCompatActivity {
         if(requestCode == 10){
             if(resultCode == RESULT_OK){
                 main_tv.setText(data.getStringExtra("array1") + " "+ data.getStringExtra("array2")); // 현재위치 구 와 동까지 나옴
+                address= data.getStringExtra("array1");
+                a=1;
+                MainFragment.btn.performClick();
 
             }else{
                 Toast.makeText(this, "결과값이 없습니다.", Toast.LENGTH_SHORT).show();
+                return;
                 //MapActivity m= new MapActivity();
-
             }
         }
 

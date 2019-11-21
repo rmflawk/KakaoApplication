@@ -108,7 +108,7 @@ public class MainFragmentAdapter extends RecyclerView.Adapter {
                     String kt= datas.get(position).kt;
                     String address= datas.get(position).address;
 
-                    MainActivity.ChatRoomName= nickname;
+                    MainActivity.chatRoomName= nickname;
 
 
                     //아이템의 상세 화면(ClickActivity)로 전환

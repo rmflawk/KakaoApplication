@@ -83,8 +83,8 @@ public class ClickActivity extends AppCompatActivity {
     public void clickChatting(View view) {
         Intent intent= new Intent(ClickActivity.this, FBChatActivity.class);
         //intent.putExtra("chatName",intent.getStringExtra("nickname"));
-        intent.putExtra("chatName", MainActivity.ChatRoomName);
-        intent.putExtra("userName", MainActivity.ChatUserName);
+        intent.putExtra("chatName", MainActivity.chatRoomName);
+        intent.putExtra("userName", MainActivity.chatUserName);
         startActivity(intent);
     }
 

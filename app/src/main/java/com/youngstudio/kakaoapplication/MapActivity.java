@@ -55,22 +55,26 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
     double longitude;
     Button ShowLocationButton;
 
+    String address;
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map);
-        //btn= findViewById(R.id.button);
 
+        address= "가 나 다 라 마";
+        address= address.substring(5);
+        array = address.split(" ");
+        array[1] = "00";
+        array[2] = "동";
 
         if (!checkLocationServicesStatus()) {
             showDialogForLocationServiceSetting();
         }else {
-
             checkRunTimePermission();
         }
         final TextView textview_address = findViewById(R.id.textview);
-
 
         ShowLocationButton = findViewById(R.id.button);
         ShowLocationButton.setOnClickListener(new View.OnClickListener()
@@ -86,7 +90,7 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
                 latitude = gpsTracker.getLatitude();
                 longitude = gpsTracker.getLongitude();
 
-                String address = getCurrentAddress(latitude, longitude);
+                address = getCurrentAddress(latitude, longitude);
                 address= address.substring(5);
                 array = address.split(" ");
                 address= array[0]+ " " +array[1]+ " " +array[2]+ " ";
@@ -149,7 +153,6 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
         markerOptions.position(latLng);
         //markerOptions.title("서울");
         //markerOptions.snippet("한국의 수도"); // 말풍선
-
 
         gMap.addMarker(markerOptions);
 

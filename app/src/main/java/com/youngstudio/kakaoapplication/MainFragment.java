@@ -125,24 +125,57 @@ public class MainFragment extends Fragment {//implements View.OnClickListener {
                                     String date = jsonObject.getString("date");
                                     String address = jsonObject.getString("address");
 
-
-
-
                                     //이미지 경로의 경우 서버IP가 제외된 주소이므로(uploads/xxxxx.jpg) 바로 사용 불가.
                                     imgPath = "http://rmflawkdk.dothome.co.kr/Android/" + imgPath;
 
-                                    if(MainActivity.i==0){
-                                        datas.add(0, new Item(no, nickname, email, name, price, address, kt, date, msg, imgPath));
-                                        adapter.notifyItemInserted(0);
-                                    }else{
-                                        if (MainActivity.kt.equals(kt)){
+
+
+                                    if(MainActivity.a==0){
+                                        if(MainActivity.i==0){
                                             datas.add(0, new Item(no, nickname, email, name, price, address, kt, date, msg, imgPath));
                                             adapter.notifyItemInserted(0);
                                         }else{
+                                            if (MainActivity.kt.equals(kt)){
+                                                datas.add(0, new Item(no, nickname, email, name, price, address, kt, date, msg, imgPath));
+                                                adapter.notifyItemInserted(0);
+                                            }else{
 
+                                            }
                                         }
+
+
+                                    }else{
+                                        if(MainActivity.i==0 && MainActivity.address.equals(address)){
+                                            datas.add(0, new Item(no, nickname, email, name, price, address, kt, date, msg, imgPath));
+                                            adapter.notifyItemInserted(0);
+
+                                        }else{
+                                            if (MainActivity.kt.equals(kt) && MainActivity.address.equals(address)){
+                                                datas.add(0, new Item(no, nickname, email, name, price, address, kt, date, msg, imgPath));
+                                                adapter.notifyItemInserted(0);
+                                            }else{
+
+                                            }
+                                        }
+
+
                                     }
-                                }
+
+
+//                                    if(MainActivity.i==0){
+//                                        datas.add(0, new Item(no, nickname, email, name, price, address, kt, date, msg, imgPath));
+//                                        adapter.notifyItemInserted(0);
+//                                    }else{
+//                                        if (MainActivity.kt.equals(kt)){
+//                                            datas.add(0, new Item(no, nickname, email, name, price, address, kt, date, msg, imgPath));
+//                                            adapter.notifyItemInserted(0);
+//                                        }else{
+//
+//                                        }
+//                                    }
+
+
+                                }//for
 
                             } catch (JSONException e) {
                                 e.printStackTrace();
@@ -170,6 +203,7 @@ public class MainFragment extends Fragment {//implements View.OnClickListener {
                 @Override
                 public void onRefresh() {
                     MainActivity.i=0;
+                    MainActivity.a=0;
                     btn.performClick();
                     Toast.makeText(getActivity(), "새로고침", Toast.LENGTH_SHORT).show();
                     swipeRefreshLayout.setRefreshing(false);

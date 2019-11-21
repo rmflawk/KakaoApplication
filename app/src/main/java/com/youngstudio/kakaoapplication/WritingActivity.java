@@ -215,6 +215,8 @@ public class WritingActivity extends AppCompatActivity {
         String kt= tv_Kategotie.getText().toString();
         int price= Integer.parseInt(etPrice.getText().toString());
 
+        String address= tv_map.getText().toString();
+
         //안드로이드에서 보낼 데이터를 받을 php서버주소
         String serverUrl="http://rmflawkdk.dothome.co.kr/Android/insertDB.php";
         //Log.i("tag","a");
@@ -243,6 +245,8 @@ public class WritingActivity extends AppCompatActivity {
         smpr.addStringParam("msg", msg);
         smpr.addStringParam("price", price+"");
         smpr.addStringParam("kt", kt);
+        smpr.addStringParam("address", address);
+
         //이미지파일 추가
         smpr.addFile("img", imgPath);
 

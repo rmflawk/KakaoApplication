@@ -123,6 +123,7 @@ public class MainFragment extends Fragment {//implements View.OnClickListener {
                                     String kt = jsonObject.getString("kt");
                                     String imgPath = jsonObject.getString("imgPath");
                                     String date = jsonObject.getString("date");
+                                    String address = jsonObject.getString("address");
 
 
 
@@ -131,11 +132,11 @@ public class MainFragment extends Fragment {//implements View.OnClickListener {
                                     imgPath = "http://rmflawkdk.dothome.co.kr/Android/" + imgPath;
 
                                     if(MainActivity.i==0){
-                                        datas.add(0, new Item(no, nickname, email, name, price, kt, date, msg, imgPath));
+                                        datas.add(0, new Item(no, nickname, email, name, price, address, kt, date, msg, imgPath));
                                         adapter.notifyItemInserted(0);
                                     }else{
                                         if (MainActivity.kt.equals(kt)){
-                                            datas.add(0, new Item(no, nickname, email, name, price, kt, date, msg, imgPath));
+                                            datas.add(0, new Item(no, nickname, email, name, price, address, kt, date, msg, imgPath));
                                             adapter.notifyItemInserted(0);
                                         }else{
 

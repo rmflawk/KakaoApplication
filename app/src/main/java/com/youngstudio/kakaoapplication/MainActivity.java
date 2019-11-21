@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
         //Toast.makeText(this, ChatG.nickName + ChatG.profileUrl + getProfile + getGender , Toast.LENGTH_SHORT).show();
 
         //Toast.makeText(this, getName + getEmail , Toast.LENGTH_SHORT).show();
-        Toast.makeText(this, ChatG.nickName + "님 환영합니다" , Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, ChatUserName + "님 환영합니다" , Toast.LENGTH_SHORT).show();
 
 
 //        try {

@@ -16,8 +16,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".FBChatStartActivity"></activity>
-        <activity android:name=".FBChatActivity" />
+        <activity android:name=".FBChatStartActivity" android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".FBChatActivity" android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".ChatMainActivity" />
         <activity android:name=".ChatActivity" />
 

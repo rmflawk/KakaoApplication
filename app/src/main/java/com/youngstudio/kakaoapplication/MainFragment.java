@@ -125,6 +125,8 @@ public class MainFragment extends Fragment {//implements View.OnClickListener {
                                     String date = jsonObject.getString("date");
 
 
+
+
                                     //이미지 경로의 경우 서버IP가 제외된 주소이므로(uploads/xxxxx.jpg) 바로 사용 불가.
                                     imgPath = "http://rmflawkdk.dothome.co.kr/Android/" + imgPath;
 

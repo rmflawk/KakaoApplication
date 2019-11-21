@@ -19,41 +19,53 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class FBChatActivity extends AppCompatActivity {
 
-    private EditText user_chat, user_edit;
-    private Button user_next;
-    private ListView chat_list;
+    public static EditText user_chat, user_edit;
+    public static Button user_next;
+    public static ListView chat_list;
 
-    private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
-    private DatabaseReference databaseReference = firebaseDatabase.getReference();
+    public FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+    public DatabaseReference databaseReference = firebaseDatabase.getReference();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fbchat);
 
-        user_chat = (EditText) findViewById(R.id.user_chat);
-        user_edit = (EditText) findViewById(R.id.user_edit);
-        user_next = (Button) findViewById(R.id.user_next);
-        chat_list = (ListView) findViewById(R.id.chat_list);
+        user_chat = findViewById(R.id.user_chat);
+        user_edit = findViewById(R.id.user_edit);
+        user_next = findViewById(R.id.user_next);
+        chat_list = findViewById(R.id.chat_list);
+
+        Intent intent= getIntent();
+        intent.getStringExtra("chatName");
+        intent.getStringExtra("userName");
+
+        user_chat.setText(intent.getStringExtra("chatName"));
+        user_edit.setText(intent.getStringExtra("userName"));
+
 
         user_next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (user_edit.getText().toString().equals("") || user_chat.getText().toString().equals(""))
                     return;
-
                 Intent intent = new Intent(FBChatActivity.this, FBChatStartActivity.class);
                 intent.putExtra("chatName", user_chat.getText().toString());
                 intent.putExtra("userName", user_edit.getText().toString());
+
+//                intent.putExtra("chatName", intent.getStringExtra("chatName"));
+//                intent.putExtra("userName", intent.getStringExtra("userName"));
                 startActivity(intent);
             }
         });
+        //showChatList();
+    }
 
-        showChatList();
+    public void show(String Room,String Name){
 
     }
 
-    private void showChatList() {
+    public void showChatList() {
         // 리스트 어댑터 생성 및 세팅
         final ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, android.R.id.text1);
         chat_list.setAdapter(adapter);

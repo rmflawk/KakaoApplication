@@ -41,6 +41,9 @@ public class MainActivity extends AppCompatActivity {
     public static String getProfile;
     public static String getGender;
     public static String kt="kt";
+    public static String ChatRoomName;
+    public static String ChatUserName;
+
     public static int i=0;
 
 
@@ -54,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
         getProfile= getIntent().getStringExtra("profile");
         getGender= getIntent().getStringExtra("gender");
 
-        ChatG.nickName = getName;
+        ChatUserName = getName;
         //ChatG.profileUrl= getProfile;
 
         //Toast.makeText(this, ChatG.nickName + ChatG.profileUrl + getProfile + getGender , Toast.LENGTH_SHORT).show();

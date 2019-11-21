@@ -2,8 +2,8 @@ package com.youngstudio.kakaoapplication;
 
 public class FBChatDTO {
 
-    private String userName;
-    private String message;
+    public static String userName;
+    public static String message;
 
     public FBChatDTO() {}
     public FBChatDTO(String userName, String message) {

@@ -29,14 +29,21 @@
     <View style="@style/Divider"
         android:layout_marginTop="20dp"/>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_chatting"
+<!--    <androidx.recyclerview.widget.RecyclerView-->
+<!--        android:id="@+id/recycler_chatting"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_weight="1"-->
+<!--        android:layout_height="500dp"-->
+<!--        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"-->
+<!--        android:orientation="vertical">-->
+<!--    </androidx.recyclerview.widget.RecyclerView>-->
+
+    <ListView
+        android:id="@+id/chat_list"
         android:layout_width="match_parent"
-        android:layout_weight="1"
-        android:layout_height="500dp"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        android:orientation="vertical">
-    </androidx.recyclerview.widget.RecyclerView>
+        android:layout_height="match_parent">
+
+    </ListView>
 
 
 

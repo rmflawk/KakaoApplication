@@ -12,11 +12,11 @@
         android:icon="@drawable/ic_main_a"
         app:showAsAction="ifRoom"/>
 
-    <item
-        android:id="@+id/menu_b"
-        android:title="call"
-        android:icon="@drawable/ic_main_b"
-        app:showAsAction="ifRoom"/>
+<!--    <item-->
+<!--        android:id="@+id/menu_b"-->
+<!--        android:title="call"-->
+<!--        android:icon="@drawable/ic_main_b"-->
+<!--        app:showAsAction="ifRoom"/>-->
 
     <item
         android:id="@+id/menu_c"

@@ -5,6 +5,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -71,6 +72,15 @@ public class ChattingFragment extends Fragment {
             }
         });
 
+        chat_list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+
+
+            }
+        });
+
 
         //recyclerView = view.findViewById(R.id.recycler_chatting);
         //adapter = new ChattingFragmentAdapter(datas, getActivity());
@@ -98,7 +108,7 @@ public class ChattingFragment extends Fragment {
         databaseReference.child("chat").addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                Log.e("LOG", "dataSnapshot.getKey() : " + dataSnapshot.getKey());
+                //Log.e("LOG", "dataSnapshot.getKey() : " + dataSnapshot.getKey());
                 adapter.add(dataSnapshot.getKey());
             }
 

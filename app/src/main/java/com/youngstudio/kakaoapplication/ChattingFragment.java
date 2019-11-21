@@ -17,7 +17,7 @@ import java.util.ArrayList;
 public class ChattingFragment extends Fragment {
 
     RecyclerView recyclerView;
-    ChattingAdapter adapter;
+    ChattingFragmentAdapter adapter;
     ArrayList<Item> datas = new ArrayList<>();
 
     @Override
@@ -47,7 +47,7 @@ public class ChattingFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_chatting, container, false);
 
         recyclerView = view.findViewById(R.id.recycler_chatting);
-        adapter = new ChattingAdapter(datas, getActivity());
+        adapter = new ChattingFragmentAdapter(datas, getActivity());
         recyclerView.setAdapter(adapter);
 
         //리사이클러뷰 구분선 추가

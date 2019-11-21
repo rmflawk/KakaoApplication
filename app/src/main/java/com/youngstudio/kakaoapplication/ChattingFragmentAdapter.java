@@ -16,12 +16,12 @@ import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
-public class ChattingAdapter extends RecyclerView.Adapter {
+public class ChattingFragmentAdapter extends RecyclerView.Adapter {
 
     ArrayList<Item> datas;
     Context context;
 
-    public ChattingAdapter(ArrayList<Item> datas, Context context) {
+    public ChattingFragmentAdapter(ArrayList<Item> datas, Context context) {
         this.datas = datas;
         this.context = context;
     }
@@ -39,7 +39,7 @@ public class ChattingAdapter extends RecyclerView.Adapter {
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
 
-        ChattingAdapter.VH vh= (ChattingAdapter.VH)holder;
+        ChattingFragmentAdapter.VH vh= (ChattingFragmentAdapter.VH)holder;
 
         Item item= datas.get(position);
 

@@ -169,7 +169,6 @@ public class MainFragment extends Fragment {//implements View.OnClickListener {
             swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
                 @Override
                 public void onRefresh() {
-                    //MainFragmentAdapter.n = 0;
                     MainActivity.i=0;
                     btn.performClick();
                     Toast.makeText(getActivity(), "새로고침", Toast.LENGTH_SHORT).show();

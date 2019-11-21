@@ -121,7 +121,7 @@
             android:id="@+id/writing_tv_map"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="도선동과 근처 동네 56개"
+            android:text="서울 지역구 지정"
             android:cursorVisible="false"
             android:layout_marginTop="16dp"
             android:paddingLeft="16dp"

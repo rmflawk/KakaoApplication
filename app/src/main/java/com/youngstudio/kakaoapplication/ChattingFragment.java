@@ -5,8 +5,10 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -14,6 +16,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
@@ -44,12 +47,7 @@ public class ChattingFragment extends Fragment {
 //        datas.add(new Item("가지야", "황학동 ~ 10월8일", "얼마에 파시나요?", R.drawable.bg_one03));
 //        datas.add(new Item("당근이", "행당동 ~ 9월 18일", "파이님 지금이 바로 집 정리할 타이밍~!", R.drawable.one_ace));
 //        datas.add(new Item("양파야", "중구 약수동 ~ 3일전", "무료나눔합니당", R.drawable.bg_one01));
-//        datas.add(new Item("오이야", "성수1가제2동 ~ 7일전", "115,000원에 삽니다", R.drawable.bg_one02));
-//        datas.add(new Item("가지야", "황학동 ~ 10월8일", "얼마에 파시나요?", R.drawable.bg_one03));
-//        datas.add(new Item("당근이", "행당동 ~ 9월 18일", "파이님 지금이 바로 집 정리할 타이밍~!", R.drawable.one_ace));
-//        datas.add(new Item("양파야", "중구 약수동 ~ 3일전", "무료나눔합니당", R.drawable.bg_one01));
-//        datas.add(new Item("오이야", "성수1가제2동 ~ 7일전", "115,000원에 삽니다", R.drawable.bg_one02));
-//        datas.add(new Item("가지야", "황학동 ~ 10월8일", "얼마에 파시나요?", R.drawable.bg_one03));
+
 
     }
 
@@ -64,6 +62,26 @@ public class ChattingFragment extends Fragment {
 
         showChatList();
 
+        final SwipeRefreshLayout swipeRefreshLayout = view.findViewById(R.id.swiperefresh_layout);
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                showChatList();
+                Toast.makeText(getActivity(), "새로고침", Toast.LENGTH_SHORT).show();
+                swipeRefreshLayout.setRefreshing(false);
+            }
+        });
+
+        chat_list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+
+
+            }
+        });
+
+
         //recyclerView = view.findViewById(R.id.recycler_chatting);
         //adapter = new ChattingFragmentAdapter(datas, getActivity());
         //recyclerView.setAdapter(adapter);
@@ -77,6 +95,8 @@ public class ChattingFragment extends Fragment {
 
 
         return view;
+
+
     }
 
     public void showChatList() {
@@ -88,7 +108,7 @@ public class ChattingFragment extends Fragment {
         databaseReference.child("chat").addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                Log.e("LOG", "dataSnapshot.getKey() : " + dataSnapshot.getKey());
+                //Log.e("LOG", "dataSnapshot.getKey() : " + dataSnapshot.getKey());
                 adapter.add(dataSnapshot.getKey());
             }
 

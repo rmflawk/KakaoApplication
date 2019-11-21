@@ -83,7 +83,7 @@ public class ClickActivity extends AppCompatActivity {
 
 
     public void clickChatting(View view) {
-        Intent intent= new Intent(ClickActivity.this, ChatMainActivity.class);
+        Intent intent= new Intent(ClickActivity.this, FBChatActivity.class);
         startActivity(intent);
     }
 

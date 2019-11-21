@@ -16,7 +16,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ChatMainActivity"></activity>
+        <activity android:name=".FBChatStartActivity"></activity>
+        <activity android:name=".FBChatActivity" />
+        <activity android:name=".ChatMainActivity" />
         <activity android:name=".ChatActivity" />
 
         <meta-data
@@ -35,31 +37,21 @@
         <activity
             android:name=".ClickActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-
         <activity
             android:name=".MainActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-
-        </activity>
-
-
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".IntroActivity"
-            android:theme="@style/AppTheme.NoActionBar" >
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
-
         <activity
             android:name=".LoginActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-
-        </activity>
-
+            android:theme="@style/AppTheme.NoActionBar" />
 
         <meta-data
             android:name="com.kakao.sdk.AppKey"
@@ -75,8 +67,6 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-
-
         <activity
             android:name=".LoginMainActivity"
             android:theme="@style/AppTheme.NoActionBar" />

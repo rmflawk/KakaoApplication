@@ -38,6 +38,8 @@ public class MainActivity extends AppCompatActivity {
     public static Toolbar toolbar;
     public static String getName;
     public static String getEmail;
+    public static String getProfile;
+    public static String getGender;
     public static String kt="kt";
     public static int i=0;
 
@@ -49,10 +51,16 @@ public class MainActivity extends AppCompatActivity {
 
         getName= getIntent().getStringExtra("name");
         getEmail= getIntent().getStringExtra("email");
-        //String getProfile= getIntent().getStringExtra("profile");
+        getProfile= getIntent().getStringExtra("profile");
+        getGender= getIntent().getStringExtra("gender");
+
+        ChatG.nickName = getName;
+        //ChatG.profileUrl= getProfile;
+
+        //Toast.makeText(this, ChatG.nickName + ChatG.profileUrl + getProfile + getGender , Toast.LENGTH_SHORT).show();
 
         //Toast.makeText(this, getName + getEmail , Toast.LENGTH_SHORT).show();
-        Toast.makeText(this, getName + "님 환영합니다" , Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, ChatG.nickName + "님 환영합니다" , Toast.LENGTH_SHORT).show();
 
 
 //        try {
@@ -208,6 +216,7 @@ public class MainActivity extends AppCompatActivity {
                     Intent intent= new Intent(MainActivity.this, WritingActivity.class);
                     intent.putExtra("nickname",getName);
                     intent.putExtra("email",getEmail);
+                    intent.putExtra("email",getProfile);
                     startActivity(intent);
                     break;
             }

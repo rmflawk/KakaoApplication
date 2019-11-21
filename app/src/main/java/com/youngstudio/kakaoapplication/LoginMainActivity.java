@@ -64,6 +64,7 @@ public class LoginMainActivity extends AppCompatActivity {
         Intent intent = getIntent();
         strNickname = intent.getStringExtra("name");
         strProfile = intent.getStringExtra("profile");
+        //ChatG.profileUrl = strProfile;
         strEmail = intent.getStringExtra("email");
         strAgeRange = intent.getStringExtra("ageRange");
         strGender = intent.getStringExtra("gender");
@@ -215,7 +216,8 @@ public class LoginMainActivity extends AppCompatActivity {
         Intent intent= new Intent(LoginMainActivity.this, MainActivity.class);
         intent.putExtra("name",strNickname);
         intent.putExtra("email",strEmail);
-        //intent.putExtra("profile",strProfile);
+        //intent.putExtra("email",strEmail);
+        intent.putExtra("profile",strProfile);
         startActivity(intent);
         finish();
     }

@@ -162,6 +162,7 @@ public class LoginActivity extends AppCompatActivity {
                         intent.putExtra("name", result.getNickname()); //유저 이름(String)
                         intent.putExtra("email",result.getKakaoAccount().getEmail());
                         intent.putExtra("profile", result.getProfileImagePath()); //유저 프로필 사진 주소(String)
+                        //intent.putExtra("gender",result.getKakaoAccount().getGender().getValue());
 
 
                         if (result.getKakaoAccount().hasEmail() == OptionalBoolean.TRUE)

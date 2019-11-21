@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -44,13 +45,17 @@ public class ChatMainActivity extends AppCompatActivity {
 
         //폰에 저장되어 있는 프로필 읽어오기
         loadData();
+
         if(ChatG.nickName!=null){
             etName.setText(ChatG.nickName);
             Picasso.get().load(ChatG.profileUrl).into(ivProfile);
+            //Glide.with(this).load(ChatG.profileUrl).into(ivProfile);
 
             //처음이 아니다, 즉 이미 접속한 적이 있다.
             isFirst= false;
         }
+
+
 
     }
 
@@ -87,7 +92,7 @@ public class ChatMainActivity extends AppCompatActivity {
 
     public void clickBtn(View view) {
 
-        //바꾼것도 없고, 처음 접속도 아니고..
+//        //바꾼것도 없고, 처음 접속도 아니고..
         if(!isChanged && !isFirst){
             //ChatActivity로 전환
             Intent intent= new Intent(this,ChatActivity.class);
@@ -97,6 +102,7 @@ public class ChatMainActivity extends AppCompatActivity {
             //save작업
             saveData();
         }
+        //saveData();
 
     }
 
@@ -106,7 +112,7 @@ public class ChatMainActivity extends AppCompatActivity {
         ChatG.nickName= etName.getText().toString();
 
         //이미지를 선택하지 않았을 수도 있으므로
-        if(imgUri==null) return;
+        //if(imgUri==null) return;
 
         //Firebase storage에 이미지 저장하기 위해 파일명 만들기(날짜를 기반으로)
         SimpleDateFormat sdf= new SimpleDateFormat("yyyyMMddhhmmss");//20191024111224

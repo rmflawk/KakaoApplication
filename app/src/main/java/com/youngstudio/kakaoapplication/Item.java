@@ -12,9 +12,10 @@ public class Item {
     String mainMsg;
     String imgPath;
     String subName;
+    String address;
     int img;
 
-    public Item(int no,String nickname, String email, String name, String price, String kt, String date, String mainMsg, String imgPath) {
+    public Item(int no,String nickname, String email, String name, String price,String address, String kt, String date, String mainMsg, String imgPath) {
         this.no = no;
         this.nickname = nickname;
         this.email = email;
@@ -24,6 +25,7 @@ public class Item {
         this.price = price;
         this.mainMsg = mainMsg;
         this.imgPath = imgPath;
+        this.address= address;
 
     }
 
@@ -32,6 +34,14 @@ public class Item {
         this.date = date;
         this.subName = subName;
         this.img = img;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public String getKt() {

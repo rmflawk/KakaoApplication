@@ -106,11 +106,12 @@ public class MainFragmentAdapter extends RecyclerView.Adapter {
                     String price= datas.get(position).price;
                     String imgPath= datas.get(position).imgPath;
                     String kt= datas.get(position).kt;
+                    String address= datas.get(position).address;
 
                     MainActivity.ChatRoomName= nickname;
 
 
-                    //아이템의 상세 화면(DetailActivity)로 전환
+                    //아이템의 상세 화면(ClickActivity)로 전환
                     Intent intent= new Intent(context, ClickActivity.class);
                     intent.putExtra("name", name);
                     intent.putExtra("nickname", nickname);
@@ -120,6 +121,7 @@ public class MainFragmentAdapter extends RecyclerView.Adapter {
                     intent.putExtra("price", price);
                     intent.putExtra("imgPath", imgPath);
                     intent.putExtra("kt", kt);
+                    intent.putExtra("address",address);
 
 
                     //액티비티 전화시 효과(api21버전 이상에서만 가능)

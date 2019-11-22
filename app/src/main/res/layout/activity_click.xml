@@ -39,16 +39,30 @@
             android:orientation="vertical"
             android:background="@color/white">
 
+            <ImageView
+                android:id="@+id/iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"/>
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="400dp">
 
-                <ImageView
-                    android:id="@+id/iv"
+                <androidx.viewpager.widget.ViewPager
+                    android:id="@+id/vpPager"
+                    android:layout_gravity="center"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:scaleType="center"
-                    android:src="@drawable/one_ace"/>
+                    android:layout_height="match_parent"/>
+
+                <me.relex.circleindicator.CircleIndicator
+                    android:id="@+id/indicator"
+                    app:ci_drawable="@drawable/black_radius"
+                    app:ci_height="7dp"
+                    app:ci_width="7dp"
+                    app:ci_margin="4dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"/>
 
 
             </RelativeLayout>

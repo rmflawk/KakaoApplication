@@ -51,6 +51,8 @@ dependencies {
     //firebase storage library
     implementation 'com.google.firebase:firebase-storage:19.1.0'
 
+    implementation 'me.relex:circleindicator:2.1.0'
+
 }
 
 apply plugin: 'com.google.gms.google-services'

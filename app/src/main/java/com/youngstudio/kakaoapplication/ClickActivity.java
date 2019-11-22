@@ -34,11 +34,11 @@ public class ClickActivity extends AppCompatActivity {
         kt= findViewById(R.id.click_tv_kt);
         iv= findViewById(R.id.iv);
 
-        Toolbar toolbar= findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        //Toolbar toolbar= findViewById(R.id.toolbar);
+        //setSupportActionBar(toolbar);
 
         //액션바에 제목이 자동표시 되지 않도록
-        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        //getSupportActionBar().setDisplayShowTitleEnabled(false);
 
         Intent intent= getIntent();
         name.setText(intent.getStringExtra("name"));

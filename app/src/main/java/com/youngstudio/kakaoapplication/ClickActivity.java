@@ -76,7 +76,7 @@ public class ClickActivity extends AppCompatActivity {
 
         //Toast.makeText(this, intent.getStringExtra("imgPath"), Toast.LENGTH_SHORT).show();
 
-        Glide.with(this).load(intent.getStringExtra("imgPath")).into(iv);
+        //Glide.with(this).load(intent.getStringExtra("imgPath")).into(iv);
 
         //Drawable dra= iv.getDrawable();
         //ClickFragmentFirst.iv.setImageDrawable(dra);

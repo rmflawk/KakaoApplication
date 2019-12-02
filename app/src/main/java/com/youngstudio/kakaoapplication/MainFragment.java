@@ -72,16 +72,10 @@ public class MainFragment extends Fragment {//implements View.OnClickListener {
             adapter = new MainFragmentAdapter(datas, getActivity());
             recyclerView.setAdapter(adapter);
 
-            //Toast.makeText(getActivity(), MainActivity.kt, Toast.LENGTH_SHORT).show();
             //리사이클러뷰 구분선 추가
             DividerItemDecoration dividerItemDecoration =
                     new DividerItemDecoration(recyclerView.getContext(), new LinearLayoutManager(getActivity()).getOrientation());
             recyclerView.addItemDecoration(dividerItemDecoration);
-
-            //setHasOptionsMenu(true);
-
-//        String aa = getArguments().getString("a"); // 전달한 key 값
-//        Toast.makeText(getActivity(), aa, Toast.LENGTH_SHORT).show();
 
             btn = view.findViewById(R.id.btn);
 
@@ -89,9 +83,6 @@ public class MainFragment extends Fragment {//implements View.OnClickListener {
             btn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-
-                    //Toast.makeText(getActivity(), "UpLoad", Toast.LENGTH_SHORT).show();
-                    //Toast.makeText(getActivity(), MainActivity.kt, Toast.LENGTH_SHORT).show();
 
                     //서버주소
                     String serverUrl = "http://rmflawkdk.dothome.co.kr/Android/loadDBtoJson.php";
@@ -105,10 +96,8 @@ public class MainFragment extends Fragment {//implements View.OnClickListener {
                             //Toast.makeText(MainActivity.this, response.toString(), Toast.LENGTH_SHORT).show();
 
                             //파라미터로 응답받은 결과 JsonArray를 분석
-
                             datas.clear();
                             adapter.notifyDataSetChanged();
-
 
                             try {
                                 for (int i = 0; i < response.length(); i++) {

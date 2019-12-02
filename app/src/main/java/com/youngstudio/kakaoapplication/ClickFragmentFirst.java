@@ -34,7 +34,6 @@ public class ClickFragmentFirst extends Fragment {
         super.onCreate(savedInstanceState);
 //        page = getArguments().getInt("someInt", 0);
 //        title = getArguments().getString("someTitle");
-
     }
 
     // Inflate the view for the fragment based on layout XML

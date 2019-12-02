@@ -117,7 +117,6 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
                     Toast.makeText(gpsTracker, "다시 한 번 눌러주세요", Toast.LENGTH_SHORT).show();
                 }
 
-
             }//onClick
         });
 

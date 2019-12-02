@@ -36,7 +36,6 @@ public class WritingActivity extends AppCompatActivity {
 
     String nickName , email;
 
-
     String[] items= new String[]{"디지털/가전", "가구/인테리어", "유아동/유아도서","생활/가공식품","여성의류/잡화","남성패션/잡화",
             "뷰티미용","스포츠/레저","게임/취미","도서/티켓/음반","반려동물용품","기타중고물품","중고차/오토바이","삽니다!!"};
 
@@ -82,7 +81,6 @@ public class WritingActivity extends AppCompatActivity {
                         //Toast t= Toast.makeText(WritingActivity.this, items[which], Toast.LENGTH_SHORT);
                         //t.show();
                     }
-
 
                 });
 

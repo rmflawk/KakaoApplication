@@ -56,6 +56,7 @@ public class MainFragment extends Fragment {//implements View.OnClickListener {
 
 
 
+
     }//onCreate
 
 
@@ -107,6 +108,7 @@ public class MainFragment extends Fragment {//implements View.OnClickListener {
 
                             datas.clear();
                             adapter.notifyDataSetChanged();
+
 
                             try {
                                 for (int i = 0; i < response.length(); i++) {
